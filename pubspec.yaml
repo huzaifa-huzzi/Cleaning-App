@@ -1,0 +1,57 @@
+name: cleaning_app
+description: "A modern cleaning services application for Mobile and Tablet devices to manage bookings, services, staff, and customer requests."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Localization
+  flutter_localizations:
+    sdk: flutter
+
+  # /// ---------- Packages Start -------- ///
+
+  # Icons & Fonts
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1
+
+  # Navigation & Strategy
+  go_router: ^14.8.0
+
+  # State Management
+  get: ^4.7.3
+
+  # UI Helpers & Components
+  dropdown_button2: ^2.3.9
+  dotted_border: ^2.1.0
+  fl_chart: ^0.70.0
+
+  # Forms, Input & Pickers
+  intl: ^0.20.3
+  intl_phone_field: ^3.2.0
+
+  # Signature & Media Handling
+  signature: ^5.5.0
+  image_picker: ^1.1.2
+
+  # /// ---------- Packages End -------- ///
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Assets Structure
+  assets:
+    - assets/icons/
+    - assets/Image/
+
