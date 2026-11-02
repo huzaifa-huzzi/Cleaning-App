@@ -1,6 +1,8 @@
 
+import 'package:cleaning_app/Resources/Routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingController extends GetxController {
   final PageController pageController = PageController();
@@ -10,15 +12,14 @@ class OnboardingController extends GetxController {
     currentIndex.value = index;
   }
 
-  void handleNextButton() {
+  void handleNextButton(BuildContext context) {
     if (currentIndex.value < 2) {
       pageController.nextPage(
         duration: const Duration(milliseconds: 400),
         curve: Curves.easeInOut,
       );
     } else {
-      // Last page par "Get Started" click hone par agali screen par navigate karein
-      // Get.offAll(() => LoginScreen());
+      context.go(Routes.login);
     }
   }
 

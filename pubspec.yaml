@@ -52,6 +52,7 @@ flutter:
 
   # Assets Structure
   assets:
-    - assets/icons/
-    - assets/Image/
+    - Assets/icons/
+    - Assets/Image/
+    - Assets/Image/Auth/
 

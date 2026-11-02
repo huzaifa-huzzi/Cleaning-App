@@ -77,7 +77,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   child: Icon(
                                     Icons.cleaning_services_rounded,
                                     size: 120,
-                                    color: AppColors.primaryColor.withOpacity(0.5),
+                                    color: AppColors.primaryColor.withValues(alpha: 0.5),
                                   ),
                                 ),
                               ),
@@ -145,12 +145,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         const SizedBox(height: 20),
                         Obx(
                               () => OnboardingButtonWidget(
-                            text: controller.currentIndex.value == 2
-                                ? TextString.getStartedButton
-                                : TextString.nextButton,
-                            isTablet: isTablet,
-                            onPressed: controller.handleNextButton,
-                          ),
+                                text: controller.currentIndex.value == 2 ? TextString.getStartedButton : TextString.nextButton,
+                                isTablet: isTablet,
+                                onPressed: () => controller.handleNextButton(context),
+                              )
                         ),
                       ],
                     ),
