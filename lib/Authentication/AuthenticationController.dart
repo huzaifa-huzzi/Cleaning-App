@@ -14,6 +14,7 @@ class Country {
 }
 
 class AuthenticationController extends GetxController {
+    /// Login
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController searchController = TextEditingController();
@@ -183,13 +184,102 @@ class AuthenticationController extends GetxController {
     return null;
   }
 
-   // Onclose Function
+
+   /// Signup
+  final TextEditingController fullNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+
+  final TextEditingController fullNameSignupController = TextEditingController();
+  final TextEditingController emailSignupController = TextEditingController();
+  final TextEditingController legalFirstNameController = TextEditingController();
+  final TextEditingController legalLastNameController = TextEditingController();
+  final TextEditingController dobController = TextEditingController();
+  final TextEditingController streetAddressController = TextEditingController();
+  final TextEditingController postcodeController = TextEditingController();
+  final TextEditingController customStateController = TextEditingController();
+
+  var agreeTerms = false.obs;
+  var selectedState = ''.obs;
+
+  final Map<String, List<String>> countryStatesMap = {
+    'Australia': [
+      'New South Wales (NSW)',
+      'Victoria (VIC)',
+      'Queensland (QLD)',
+      'Western Australia (WA)',
+      'South Australia (SA)',
+      'Tasmania (TAS)',
+      'Australian Capital Territory (ACT)',
+      'Northern Territory (NT)',
+    ],
+    'Pakistan': [
+      'Punjab',
+      'Sindh',
+      'Khyber Pakhtunkhwa (KP)',
+      'Balochistan',
+      'Islamabad (ICT)',
+      'Gilgit-Baltistan',
+      'Azad Kashmir (AJK)',
+    ],
+    'India': [
+      'Delhi',
+      'Maharashtra',
+      'Punjab',
+      'Karnataka',
+      'Tamil Nadu',
+      'Uttar Pradesh',
+      'Gujarat',
+      'West Bengal',
+    ],
+    'United States': [
+      'California (CA)',
+      'Texas (TX)',
+      'Florida (FL)',
+      'New York (NY)',
+      'Illinois (IL)',
+      'Pennsylvania (PA)',
+    ],
+    'United Kingdom': [
+      'England',
+      'Scotland',
+      'Wales',
+      'Northern Ireland',
+    ],
+    'Canada': [
+      'Ontario (ON)',
+      'Quebec (QC)',
+      'British Columbia (BC)',
+      'Alberta (AB)',
+    ],
+    'United Arab Emirates': [
+      'Abu Dhabi',
+      'Dubai',
+      'Sharjah',
+      'Ajman',
+      'Ras Al Khaimah',
+      'Fujairah',
+      'Umm Al Quwain',
+    ],
+  };
+
+  List<String>? get currentStates {
+    return countryStatesMap[selectedCountryName.value];
+  }
+
   @override
   void onClose() {
     phoneController.dispose();
     passwordController.dispose();
     searchController.dispose();
     confirmPasswordController.dispose();
+    fullNameController.dispose();
+    emailController.dispose();
+    legalFirstNameController.dispose();
+    legalLastNameController.dispose();
+    dobController.dispose();
+    streetAddressController.dispose();
+    postcodeController.dispose();
+    customStateController.dispose();
 
     for (var c in otpControllers) {
       c.dispose();

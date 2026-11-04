@@ -55,4 +55,27 @@ class TextString {
   static const String resendTimer = 'Resend in 00:30';
   static const String verifyNumberButton = 'Verify Number';
 
+   /// Signup
+// verify Screen
+  static const String signupVerifyStep = '02 / 10';
+  static const String signupVerifyTitle = 'Verify Your Number';
+  static const String signupVerifySubtitle = "We've sent a verification code to\n";
+  static const String wrongNumberHint = 'Wrong number? Go back and edit it.';
+
+   // Signup Detail Screen
+  static const String signupDetailStep = '03 / 10';
+  static const String signupDetailTitle = 'Tell Us About Yourself';
+  static const String signupDetailSubtitle = 'We need a few details to set up your cleaner profile.';
+  static const String legalFirstNameLabel = 'Legal First Name';
+  static const String legalFirstNameHint = 'As shown on your identity document';
+  static const String legalLastNameLabel = 'Legal Last Name';
+  static const String legalLastNameHint = 'As shown on your identity document';
+  static const String dobLabel = 'Date of Birth';
+  static const String dobHint = 'DD/MM/YYYY';
+  static const String residentialAddressLabel = 'Residential Address in Australia';
+  static const String streetAddressHint = 'Street address';
+  static const String stateHint = 'State';
+  static const String postcodeHint = 'Postcode';
+  static const String saveAndContinueButton = 'Save and Continue';
+
 }

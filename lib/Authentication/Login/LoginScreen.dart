@@ -92,6 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(height: 6),
                       Obx(
                             () => TextFormField(
+                              cursorColor: AppColors.blackColor,
                           controller: controller.passwordController,
                           obscureText: controller.isPasswordHidden.value,
                           style: Theme.of(context).textTheme.bodyMedium,
@@ -201,7 +202,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               style: Theme.of(context).textTheme.titleLarge,
                             ),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                context.push(Routes.signup);
+                              },
                               child: Text(
                                 TextString.createAccountButton,
                                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
