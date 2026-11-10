@@ -233,7 +233,7 @@ class _SignupTermsState extends State<SignupTerms> {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: AppColors.whiteColor,
+        color: AppColors.fieldColors,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
