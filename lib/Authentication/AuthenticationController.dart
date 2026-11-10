@@ -2,8 +2,11 @@
 
 
 
+import 'package:cleaning_app/Resources/ImageString.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:video_player/video_player.dart';
 
 class Country {
   final String name;
@@ -265,6 +268,150 @@ class AuthenticationController extends GetxController {
   List<String>? get currentStates {
     return countryStatesMap[selectedCountryName.value];
   }
+
+  // Profile Image State for Signup Face Screen
+  var profileImagePath = ''.obs;
+
+// Image Pick Method (Camera / Gallery)
+  Future<void> pickProfileImage(ImageSource source) async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: source, imageQuality: 80);
+    if (image != null) {
+      profileImagePath.value = image.path;
+    }
+  }
+
+// Remove Image Method
+  void removeProfileImage() {
+    profileImagePath.value = '';
+  }
+
+  var selectedIdentityType = 'Australian driver licence'.obs;
+  var isIdentitySubmitted = false.obs; // False matlab first screen, True matlab second screen (upload fields wali)
+
+// Document Image Paths
+  var frontLicensePath = ''.obs;
+  var backLicensePath = ''.obs;
+  var passportPath = ''.obs;
+  var otherDocumentPath = ''.obs;
+
+// Method to pick document image
+  Future<void> pickDocumentImage(String docType, ImageSource source) async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: source, imageQuality: 80);
+    if (image != null) {
+      if (docType == 'front') frontLicensePath.value = image.path;
+      if (docType == 'back') backLicensePath.value = image.path;
+      if (docType == 'passport') passportPath.value = image.path;
+      if (docType == 'other') otherDocumentPath.value = image.path;
+    }
+  }
+
+// Method to remove document image
+  void removeDocumentImage(String docType) {
+    if (docType == 'front') frontLicensePath.value = '';
+    if (docType == 'back') backLicensePath.value = '';
+    if (docType == 'passport') passportPath.value = '';
+    if (docType == 'other') otherDocumentPath.value = '';
+  }
+
+  var selectedRightToWorkType = ''.obs;
+  var isRightToWorkSubmitted = false.obs;
+
+  RxString citizenDocumentPath = ''.obs;
+  RxString permanentResidentDocumentPath = ''.obs;
+  RxString visaDocumentPath = ''.obs;
+
+  void pickRightToWorkImage(String docType, ImageSource source) async {
+    try {
+      final picker = ImagePicker();
+      final pickedFile = await picker.pickImage(source: source);
+
+      if (pickedFile != null) {
+        if (docType == 'front' || docType == 'citizen') {
+          citizenDocumentPath.value = pickedFile.path;
+        } else if (docType == 'back' || docType == 'resident') {
+          permanentResidentDocumentPath.value = pickedFile.path;
+        } else if (docType == 'visa' || docType == 'other') {
+          visaDocumentPath.value = pickedFile.path;
+        }
+      }
+    } catch (e) {
+      Get.snackbar('Error', 'Failed to pick image: $e');
+    }
+  }
+
+  void removeRightToWorkImage(String docType) {
+    if (docType == 'front' || docType == 'citizen') {
+      citizenDocumentPath.value = '';
+    } else if (docType == 'back' || docType == 'resident') {
+      permanentResidentDocumentPath.value = '';
+    } else if (docType == 'visa' || docType == 'other') {
+      visaDocumentPath.value = '';
+    }
+  }
+
+  var selectedCleaningServices = <String>[].obs;
+  var selectedAvailability = <String>[].obs;
+
+  // Text controllers for inputs
+  final TextEditingController cleaningExperienceController = TextEditingController();
+  final TextEditingController serviceAreaController = TextEditingController();
+  final TextEditingController qualificationsController = TextEditingController();
+
+  // Toggle methods for multi-selection
+  void toggleCleaningService(String service) {
+    if (selectedCleaningServices.contains(service)) {
+      selectedCleaningServices.remove(service);
+    } else {
+      selectedCleaningServices.add(service);
+    }
+  }
+
+  void toggleAvailability(String slot) {
+    if (selectedAvailability.contains(slot)) {
+      selectedAvailability.remove(slot);
+    } else {
+      selectedAvailability.add(slot);
+    }
+  }
+
+
+  late VideoPlayerController videoController;
+  var isVideoInitialized = false.obs;
+  var isTutorialWatched = false.obs;
+
+  void initTutorialVideo() {
+    videoController = VideoPlayerController.asset(ImageString.cleaningServiceVideo)
+      ..initialize().then((_) {
+        isVideoInitialized.value = true;
+      });
+
+    videoController.addListener(() {
+      if (videoController.value.position >= videoController.value.duration &&
+          !videoController.value.isPlaying) {
+        isTutorialWatched.value = true;
+      }
+    });
+  }
+
+  void toggleVideoPlayPause() {
+    if (videoController.value.isPlaying) {
+      videoController.pause();
+    } else {
+      videoController.play();
+    }
+  }
+
+
+  // --- Yeh variables apne AuthenticationController mein add karein ---
+  RxBool agreeToTerms = false.obs;
+  RxBool agreeToCommission = false.obs;
+  RxBool agreeToPrivacy = false.obs;
+
+// Getter jo check karega ke teeno checkboxes tick hain ya nahi
+  RxBool get isAllPoliciesAccepted =>
+      (agreeToTerms.value && agreeToCommission.value && agreeToPrivacy.value).obs;
 
   @override
   void onClose() {

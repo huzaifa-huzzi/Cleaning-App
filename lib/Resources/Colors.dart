@@ -7,5 +7,6 @@ class AppColors {
   static const Color fieldAboveTextColor = Color(0xFF414141);
   static const Color fieldColors = Color(0xffF1F5FE);
   static const Color whiteColor = Color(0xFFFFFFFF);
+  static const Color photoBackground =  Color(0xFFE8ECF4);
   static const Color blackColor = Colors.black;
 }

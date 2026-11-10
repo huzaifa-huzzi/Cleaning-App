@@ -289,7 +289,7 @@ class _SignupDetailScreenState extends State<SignupDetailScreen> {
                                       },
                                       buttonStyleData: const ButtonStyleData(height: 52, padding: EdgeInsets.zero),
                                       iconStyleData: const IconStyleData(
-                                        icon: Icon(Icons.keyboard_arrow_down_rounded, size: 18, color: Colors.black54),
+                                        icon: Icon(Icons.keyboard_arrow_down_rounded, size: 18, color: AppColors.blackColor),
                                       ),
                                       dropdownStyleData: DropdownStyleData(
                                         maxHeight: 250,
@@ -366,7 +366,7 @@ class _SignupDetailScreenState extends State<SignupDetailScreen> {
                           text: TextString.saveAndContinueButton,
                           isTablet: isTablet,
                           onPressed: () {
-
+                             context.push(Routes.signupFaceScreen);
                           },
                         ),
                       ),

@@ -7,6 +7,12 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
+	<key>NSCameraUsageDescription</key>
+    <string>We need access to your camera so you can take a profile photo.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We need access to your photo library to choose a profile picture.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>We need access to save photos to your photo library.</string>
 	<string>Cleaning App</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>

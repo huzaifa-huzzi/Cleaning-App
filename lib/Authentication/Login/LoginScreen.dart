@@ -206,7 +206,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 context.push(Routes.signup);
                               },
                               child: Text(
-                                TextString.createAccountButton,
+                                TextString.createAccountButtonSecond,
                                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                                   fontWeight: FontWeight.bold,
                                 ),

@@ -11,4 +11,10 @@ class ImageString {
   static const String loginDialogPic = 'Assets/Image/Auth/LoginDialogPic.png';
   static const String loginPic = 'Assets/Image/Auth/LoginPic.png';
 
+  // Signup
+  static const String signupic = 'Assets/Image/Auth/SignupPic.png';
+  static const String verifyIdentityPic = 'Assets/Image/Auth/VerifyIdentity.png';
+  static const String confirmRight = 'Assets/Image/Auth/ConfirmRight.png';
+  static const String cleaningService = 'Assets/Image/Auth/CleaningService.png';
+  static const String cleaningServiceVideo = 'Assets/Image/Auth/cleaningServiceVideo.mp4';
 }

@@ -35,7 +35,8 @@ class TextString {
   static const String phoneNumberLabel = 'Phone Number';
   static const String enterNumberHint = 'Enter number';
   static const String searchHint = 'Search';
-  static const String createAccountButton = 'Create Account';
+  static const String createAccountButton = 'Login';
+  static const String createAccountButtonSecond = 'Create Account';
 
    // Login Screen
   static const String loginTitle = 'Welcome Back';
