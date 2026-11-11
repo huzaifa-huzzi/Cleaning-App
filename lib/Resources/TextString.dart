@@ -166,7 +166,7 @@ class TextString {
   static const String passwordHelperText = 'Use at least 8 characters, including a number and a letter.';
   static const String agreeTermsText = 'I agree to the Terms and Privacy Policy.';
   static const String alreadyHaveAccountText = 'Already have an account? ';
-  static const String loginButtonText = 'Log In';
+  static const String loginButtonText = 'Login';
   static const String searchHintText = 'Search';
 
   // Signup Terms

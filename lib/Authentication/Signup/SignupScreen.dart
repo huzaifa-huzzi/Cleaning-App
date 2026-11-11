@@ -11,10 +11,6 @@ import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
@@ -252,7 +248,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       const SizedBox(height: 24),
                       Center(
                         child: AuthButton(
-                          text: TextString.createAccountButton,
+                          text: TextString.createAccountButtonSecond,
                           isTablet: isTablet,
                           onPressed: () {
                             context.go(Routes.signupVerify);
