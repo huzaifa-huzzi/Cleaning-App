@@ -114,7 +114,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
                       Center(
                         child: AuthButton(
-                          text: TextString.createAccountButton,
+                          text: TextString.forgotbutton,
                           isTablet: isTablet,
                           onPressed: () {
                             context.go(Routes.verifyNumber);
@@ -149,7 +149,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       style: const TextStyle(fontSize: 20),
     );
   }
-
   Widget _buildSearchField(BuildContext context, TextEditingController searchController) {
     return Padding(
       padding: const EdgeInsets.all(12),
@@ -176,7 +175,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       ),
     );
   }
-
   // Phone Field
   Widget _buildPhoneField(BuildContext context, String label) {
     return Column(
@@ -229,7 +227,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               children: [
                                 _buildCircleFlag(country.countryCode),
                                 const SizedBox(width: 4),
-                                const Icon(Icons.keyboard_arrow_down_rounded, size: 18, color: Colors.black54),
+                                const Icon(Icons.keyboard_arrow_down_rounded, size: 18, color: AppColors.blackColor),
                                 const SizedBox(width: 6),
                                 Text(
                                   "+${country.phoneCode}",
@@ -281,7 +279,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           width: 260,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
-                            color: Colors.white,
+                            color: AppColors.whiteColor,
                           ),
                           offset: const Offset(0, -5),
                         ),
