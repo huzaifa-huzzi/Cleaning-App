@@ -269,10 +269,8 @@ class AuthenticationController extends GetxController {
     return countryStatesMap[selectedCountryName.value];
   }
 
-  // Profile Image State for Signup Face Screen
   var profileImagePath = ''.obs;
 
-// Image Pick Method (Camera / Gallery)
   Future<void> pickProfileImage(ImageSource source) async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(source: source, imageQuality: 80);
@@ -280,22 +278,18 @@ class AuthenticationController extends GetxController {
       profileImagePath.value = image.path;
     }
   }
-
-// Remove Image Method
   void removeProfileImage() {
     profileImagePath.value = '';
   }
 
   var selectedIdentityType = 'Australian driver licence'.obs;
-  var isIdentitySubmitted = false.obs; // False matlab first screen, True matlab second screen (upload fields wali)
+  var isIdentitySubmitted = false.obs;
 
-// Document Image Paths
   var frontLicensePath = ''.obs;
   var backLicensePath = ''.obs;
   var passportPath = ''.obs;
   var otherDocumentPath = ''.obs;
 
-// Method to pick document image
   Future<void> pickDocumentImage(String docType, ImageSource source) async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(source: source, imageQuality: 80);
@@ -307,7 +301,6 @@ class AuthenticationController extends GetxController {
     }
   }
 
-// Method to remove document image
   void removeDocumentImage(String docType) {
     if (docType == 'front') frontLicensePath.value = '';
     if (docType == 'back') backLicensePath.value = '';
@@ -354,12 +347,10 @@ class AuthenticationController extends GetxController {
   var selectedCleaningServices = <String>[].obs;
   var selectedAvailability = <String>[].obs;
 
-  // Text controllers for inputs
   final TextEditingController cleaningExperienceController = TextEditingController();
   final TextEditingController serviceAreaController = TextEditingController();
   final TextEditingController qualificationsController = TextEditingController();
 
-  // Toggle methods for multi-selection
   void toggleCleaningService(String service) {
     if (selectedCleaningServices.contains(service)) {
       selectedCleaningServices.remove(service);
@@ -402,14 +393,10 @@ class AuthenticationController extends GetxController {
       videoController.play();
     }
   }
-
-
-  // --- Yeh variables apne AuthenticationController mein add karein ---
   RxBool agreeToTerms = false.obs;
   RxBool agreeToCommission = false.obs;
   RxBool agreeToPrivacy = false.obs;
 
-// Getter jo check karega ke teeno checkboxes tick hain ya nahi
   RxBool get isAllPoliciesAccepted =>
       (agreeToTerms.value && agreeToCommission.value && agreeToPrivacy.value).obs;
 

@@ -3,11 +3,14 @@ import 'package:cleaning_app/Authentication/ReusableWidget/AuthButton.dart';
 import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/ImageString.dart';
 import 'package:cleaning_app/Resources/Routes.dart';
+import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:video_player/video_player.dart';
-
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:video_player/video_player.dart';
 
 class SignupTutorial extends StatefulWidget {
   const SignupTutorial({super.key});
@@ -44,9 +47,9 @@ class _SignupTutorialState extends State<SignupTutorial> {
                 Container(
                   height: isTablet ? 260 : 220,
                   width: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppColors.fieldColors,
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(30),
                       bottomRight: Radius.circular(30),
                     ),
@@ -97,7 +100,7 @@ class _SignupTutorialState extends State<SignupTutorial> {
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
-                              '08 / 10',
+                              TextString.signupTutorialStep,
                               style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                 color: AppColors.primaryColor,
                                 fontWeight: FontWeight.bold,
@@ -107,22 +110,20 @@ class _SignupTutorialState extends State<SignupTutorial> {
                         ],
                       ),
                       const SizedBox(height: 20),
-
                       Text(
-                        'Your Guide to Cleaning',
+                        TextString.signupTutorialTitle,
                         style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                           fontSize: isTablet ? 28 : 24,
                         ),
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        'Watch the video and review the essential guidelines before accepting your first job.',
+                        TextString.signupTutorialSubtitle,
                         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                           height: 1.4,
                         ),
                       ),
                       const SizedBox(height: 24),
-
                       Container(
                         width: double.infinity,
                         padding: const EdgeInsets.all(20),
@@ -180,7 +181,7 @@ class _SignupTutorialState extends State<SignupTutorial> {
                             const SizedBox(height: 20),
 
                             Text(
-                              'Topics to Review',
+                              TextString.topicsToReviewHeader,
                               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,
@@ -188,36 +189,37 @@ class _SignupTutorialState extends State<SignupTutorial> {
                             ),
                             const SizedBox(height: 4),
                             Text(
-                              'Understand these key guidelines before getting started.',
+                              TextString.topicsToReviewSubtitle,
                               style: Theme.of(context).textTheme.titleSmall,
                             ),
                             const SizedBox(height: 16),
 
-                            _buildReviewItem('Understanding Job Requests'),
+                            _buildReviewItem(TextString.topicUnderstandingJobRequests),
                             const SizedBox(height: 10),
-                            _buildReviewItem('10% Platform Commission'),
+                            _buildReviewItem(TextString.topicPlatformCommission),
                             const SizedBox(height: 10),
-                            _buildReviewItem('Cleaning Standards & Safety'),
+                            _buildReviewItem(TextString.topicCleaningStandards),
                             const SizedBox(height: 10),
-                            _buildReviewItem('Cancellations & Punctuality'),
+                            _buildReviewItem(TextString.topicCancellationsPunctuality),
                             const SizedBox(height: 10),
-                            _buildReviewItem('Complaints & Reporting'),
+                            _buildReviewItem(TextString.topicComplaintsReporting),
 
                             const SizedBox(height: 24),
-
                             Obx(() => SizedBox(
                               width: double.infinity,
                               child: AuthButton(
-                                text: 'Complete tutorial',
+                                text: controller.isTutorialWatched.value
+                                    ? TextString.continueButton
+                                    : TextString.completeTutorialButton,
                                 isTablet: isTablet,
                                 onPressed: controller.isTutorialWatched.value
                                     ? () {
-                                     context.push(Routes.signupTerms);
+                                  context.push(Routes.signupTerms);
                                 }
                                     : () {
                                   Get.snackbar(
-                                    'Notice',
-                                    'Please watch the complete video to continue.',
+                                    TextString.noticeTitle,
+                                    TextString.watchCompleteVideoNotice,
                                     snackPosition: SnackPosition.BOTTOM,
                                   );
                                 },
@@ -237,9 +239,10 @@ class _SignupTutorialState extends State<SignupTutorial> {
       ),
     );
   }
-   /// -------------- Extra Widget ----------------- ///
 
-   // Review Item
+  /// -------------- Helper Widget ----------------- ///
+
+  // Review Item
   Widget _buildReviewItem(String title) {
     return Row(
       children: [

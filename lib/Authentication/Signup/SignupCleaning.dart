@@ -4,11 +4,11 @@ import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/IconString.dart';
 import 'package:cleaning_app/Resources/ImageString.dart';
 import 'package:cleaning_app/Resources/Routes.dart';
+import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
-
 
 class SignupCleaning extends StatefulWidget {
   const SignupCleaning({super.key});
@@ -112,7 +112,7 @@ class _SignupCleaningState extends State<SignupCleaning> {
                               ],
                             ),
                             child: Text(
-                              '07 / 10',
+                              TextString.stepIndicator,
                               style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                 color: AppColors.primaryColor,
                                 fontWeight: FontWeight.bold,
@@ -124,7 +124,7 @@ class _SignupCleaningState extends State<SignupCleaning> {
                       const SizedBox(height: 20),
 
                       Text(
-                        'Set Up Cleaning Services',
+                        TextString.setupCleaningTitle,
                         style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                           fontSize: isTablet ? 28 : 24,
                           fontWeight: FontWeight.bold,
@@ -133,7 +133,7 @@ class _SignupCleaningState extends State<SignupCleaning> {
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        'Tell customers what you do and where you work.',
+                        TextString.setupCleaningSubtitle,
                         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                           fontSize: 13,
                           color: AppColors.secondaryColor,
@@ -159,7 +159,7 @@ class _SignupCleaningState extends State<SignupCleaning> {
                                   Image.asset(ImageString.cleaningService, width: 60, height: 60),
                                   const SizedBox(height: 10),
                                   Text(
-                                    'Cleaning Services',
+                                    TextString.cleaningServicesHeader,
                                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.blackColor,
@@ -168,7 +168,7 @@ class _SignupCleaningState extends State<SignupCleaning> {
                                   ),
                                   const SizedBox(height: 2),
                                   Text(
-                                    'Select all that apply.',
+                                    TextString.selectAllApply,
                                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                       color: Colors.grey.shade500,
                                       fontSize: 11,
@@ -179,20 +179,20 @@ class _SignupCleaningState extends State<SignupCleaning> {
                             ),
                             const SizedBox(height: 20),
 
-                            _buildMultiSelectOption('Regular house cleaning'),
+                            _buildMultiSelectOption(TextString.serviceRegular),
                             const SizedBox(height: 10),
-                            _buildMultiSelectOption('Deep cleaning'),
+                            _buildMultiSelectOption(TextString.serviceDeep),
                             const SizedBox(height: 10),
-                            _buildMultiSelectOption('End-of-lease cleaning'),
+                            _buildMultiSelectOption(TextString.serviceEndLease),
                             const SizedBox(height: 10),
-                            _buildMultiSelectOption('Bathroom and kitchen cleaning'),
+                            _buildMultiSelectOption(TextString.serviceBathroomKitchen),
                             const SizedBox(height: 10),
-                            _buildMultiSelectOption('Window cleaning'),
+                            _buildMultiSelectOption(TextString.serviceWindow),
 
                             const SizedBox(height: 24),
 
                             Text(
-                              'Cleaning Experience',
+                              TextString.cleaningExperienceLabel,
                               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 13,
@@ -200,11 +200,11 @@ class _SignupCleaningState extends State<SignupCleaning> {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            _buildTextField('Select your experience', IconString.experience, controller.cleaningExperienceController),
+                            _buildTextField(TextString.experienceHint, IconString.experience, controller.cleaningExperienceController),
 
                             const SizedBox(height: 16),
                             Text(
-                              'Service Area',
+                              TextString.serviceAreaLabel,
                               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 13,
@@ -212,12 +212,12 @@ class _SignupCleaningState extends State<SignupCleaning> {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            _buildTextField('Enter suburb or postcode', IconString.serviceArea, controller.serviceAreaController),
+                            _buildTextField(TextString.serviceAreaHint, IconString.serviceArea, controller.serviceAreaController),
 
                             const SizedBox(height: 20),
 
                             Text(
-                              'Availability',
+                              TextString.availabilityLabel,
                               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 13,
@@ -225,20 +225,20 @@ class _SignupCleaningState extends State<SignupCleaning> {
                               ),
                             ),
                             const SizedBox(height: 12),
-                            _buildAvailabilityOption('Weekdays'),
+                            _buildAvailabilityOption(TextString.availWeekdays),
                             const SizedBox(height: 10),
-                            _buildAvailabilityOption('Weekends'),
+                            _buildAvailabilityOption(TextString.availWeekends),
                             const SizedBox(height: 10),
-                            _buildAvailabilityOption('Morning'),
+                            _buildAvailabilityOption(TextString.availMorning),
                             const SizedBox(height: 10),
-                            _buildAvailabilityOption('Afternoon'),
+                            _buildAvailabilityOption(TextString.availAfternoon),
                             const SizedBox(height: 10),
-                            _buildAvailabilityOption('Evening'),
+                            _buildAvailabilityOption(TextString.availEvening),
 
                             const SizedBox(height: 20),
 
                             Text(
-                              'Relevant Qualifications (Optional)',
+                              TextString.qualificationsLabel,
                               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 13,
@@ -246,14 +246,14 @@ class _SignupCleaningState extends State<SignupCleaning> {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            _buildTextField('Add qualification or certificate', IconString.relevantQualification, controller.qualificationsController),
+                            _buildTextField(TextString.qualificationsHint, IconString.relevantQualification, controller.qualificationsController),
 
                             const SizedBox(height: 24),
 
                             SizedBox(
                               width: double.infinity,
                               child: AuthButton(
-                                text: 'Continue',
+                                text: TextString.continueButton,
                                 isTablet: isTablet,
                                 onPressed: () {
                                   context.push(Routes.signupTutorial);
@@ -320,7 +320,7 @@ class _SignupCleaningState extends State<SignupCleaning> {
     });
   }
 
-   // Availabbility option
+  // Availability option
   Widget _buildAvailabilityOption(String title) {
     return Obx(() {
       bool isSelected = controller.selectedAvailability.contains(title);

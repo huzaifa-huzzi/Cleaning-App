@@ -6,6 +6,7 @@ import 'package:cleaning_app/Authentication/Signup/SignupCleaning.dart';
 import 'package:cleaning_app/Authentication/Signup/SignupDetailScreen.dart';
 import 'package:cleaning_app/Authentication/Signup/SignupFace.dart';
 import 'package:cleaning_app/Authentication/Signup/SignupIdentity.dart';
+import 'package:cleaning_app/Authentication/Signup/SignupLastScreen.dart';
 import 'package:cleaning_app/Authentication/Signup/SignupScreen.dart';
 import 'package:cleaning_app/Authentication/Signup/SignupTerms.dart';
 import 'package:cleaning_app/Authentication/Signup/SignupTutorial.dart';
@@ -33,6 +34,7 @@ class Routes {
   static const String signupCleaning = '/signupCleaning';
   static const String signupTutorial = '/signupTutorial';
   static const String signupTerms = '/signupTerms';
+  static const String signupLastScreen = '/signupLastScreen';
 
 
 
@@ -99,6 +101,10 @@ class Routes {
       GoRoute(
         path: signupTerms,
         builder: (context, state) => const SignupTerms(),
+      ),
+      GoRoute(
+        path: signupLastScreen,
+        builder: (context, state) => const SignupLastScreen(),
       ),
     ],
   );

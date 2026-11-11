@@ -4,13 +4,13 @@ import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/IconString.dart';
 import 'package:cleaning_app/Resources/ImageString.dart';
 import 'package:cleaning_app/Resources/Routes.dart';
+import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:io';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
-
 
 
 class SignupIdentity extends StatefulWidget {
@@ -119,7 +119,7 @@ class _SignupIdentityState extends State<SignupIdentity> {
                               ],
                             ),
                             child: Text(
-                              '05 / 10',
+                              TextString.signupIdentityStep,
                               style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                 color: AppColors.primaryColor,
                                 fontWeight: FontWeight.bold,
@@ -131,7 +131,7 @@ class _SignupIdentityState extends State<SignupIdentity> {
                       const SizedBox(height: 20),
 
                       Text(
-                        'Verify Your Identity',
+                        TextString.signupIdentityTitle,
                         style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                           fontSize: isTablet ? 28 : 24,
                           fontWeight: FontWeight.bold,
@@ -141,8 +141,8 @@ class _SignupIdentityState extends State<SignupIdentity> {
                       const SizedBox(height: 6),
                       Obx(() => Text(
                         controller.isIdentitySubmitted.value
-                            ? 'Your information is handled securely\nYour identity data is kept secure and used only to verify your identity.'
-                            : 'Identity verification helps us protect cleaners and customers.',
+                            ? TextString.secureInfoSubtitle
+                            : TextString.signupIdentitySubtitle,
                         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                           fontSize: 13,
                           color: AppColors.secondaryColor,
@@ -163,22 +163,21 @@ class _SignupIdentityState extends State<SignupIdentity> {
                           if (!controller.isIdentitySubmitted.value) {
                             return Column(
                               children: [
-                                Image.asset(ImageString.verifyIdentityPic,width: 100,height: 100,),
+                                Image.asset(ImageString.verifyIdentityPic, width: 100, height: 100),
                                 const SizedBox(height: 20),
-                                _buildRadioOption('Australian driver licence', IconString.driverLicense),
+                                _buildRadioOption(TextString.optionAussieLicence, IconString.driverLicense),
                                 const SizedBox(height: 12),
-                                _buildRadioOption('Passport', IconString.passport),
+                                _buildRadioOption(TextString.optionPassport, IconString.passport),
                                 const SizedBox(height: 12),
-                                _buildRadioOption('Other supported identity document', IconString.otherDocument),
+                                _buildRadioOption(TextString.optionOtherDocument, IconString.otherDocument),
                                 const SizedBox(height: 24),
                                 SizedBox(
                                   width: double.infinity,
                                   child: AuthButton(
-                                    text: 'Continue to Verification',
+                                    text: TextString.continueToVerification,
                                     isTablet: isTablet,
                                     onPressed: () {
                                       controller.isIdentitySubmitted.value = true;
-                                      context.push(Routes.signupConfirmIdentity);
                                     },
                                   ),
                                 ),
@@ -187,13 +186,13 @@ class _SignupIdentityState extends State<SignupIdentity> {
                           } else {
                             String type = controller.selectedIdentityType.value;
 
-                            if (type == 'Australian driver licence') {
+                            if (type == TextString.optionAussieLicence) {
                               return Column(
                                 children: [
-                                  Image.asset(ImageString.verifyIdentityPic),
+                                  Image.asset(ImageString.verifyIdentityPic, width: 100, height: 100),
                                   const SizedBox(height: 12),
                                   Text(
-                                    'Your information is handled securely',
+                                    TextString.secureInfoTitle,
                                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.blackColor,
@@ -202,7 +201,7 @@ class _SignupIdentityState extends State<SignupIdentity> {
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
-                                    'Your identity data is kept secure and used only to verify your identity.',
+                                    TextString.secureInfoDescription,
                                     textAlign: TextAlign.center,
                                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                       color: Colors.grey.shade500,
@@ -210,14 +209,14 @@ class _SignupIdentityState extends State<SignupIdentity> {
                                     ),
                                   ),
                                   const SizedBox(height: 20),
-                                  _buildUploadBox('Front of license', 'front', controller.frontLicensePath),
+                                  _buildUploadBox(TextString.uploadFrontLicense, 'front', controller.frontLicensePath),
                                   const SizedBox(height: 16),
-                                  _buildUploadBox('Back of license', 'back', controller.backLicensePath),
+                                  _buildUploadBox(TextString.uploadBackLicense, 'back', controller.backLicensePath),
                                   const SizedBox(height: 24),
                                   SizedBox(
                                     width: double.infinity,
                                     child: AuthButton(
-                                      text: 'Continue to Verification',
+                                      text: TextString.continueToVerification,
                                       isTablet: isTablet,
                                       onPressed: () {
                                         context.push(Routes.signupConfirmIdentity);
@@ -226,13 +225,13 @@ class _SignupIdentityState extends State<SignupIdentity> {
                                   ),
                                 ],
                               );
-                            } else if (type == 'Passport') {
+                            } else if (type == TextString.optionPassport) {
                               return Column(
                                 children: [
-                                  Image.asset(ImageString.verifyIdentityPic,width: 100,height: 100,),
+                                  Image.asset(ImageString.verifyIdentityPic, width: 100, height: 100),
                                   const SizedBox(height: 12),
                                   Text(
-                                    'Your information is handled securely',
+                                    TextString.secureInfoTitle,
                                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.blackColor,
@@ -241,7 +240,7 @@ class _SignupIdentityState extends State<SignupIdentity> {
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
-                                    'Your identity data is kept secure and used only to verify your identity.',
+                                    TextString.secureInfoDescription,
                                     textAlign: TextAlign.center,
                                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                       color: Colors.grey.shade500,
@@ -249,12 +248,12 @@ class _SignupIdentityState extends State<SignupIdentity> {
                                     ),
                                   ),
                                   const SizedBox(height: 20),
-                                  _buildUploadBox('Passport photo page', 'passport', controller.passportPath),
+                                  _buildUploadBox(TextString.uploadPassportPage, 'passport', controller.passportPath),
                                   const SizedBox(height: 24),
                                   SizedBox(
                                     width: double.infinity,
                                     child: AuthButton(
-                                      text: 'Continue to Verification',
+                                      text: TextString.continueToVerification,
                                       isTablet: isTablet,
                                       onPressed: () {
                                         context.push(Routes.signupConfirmIdentity);
@@ -264,13 +263,12 @@ class _SignupIdentityState extends State<SignupIdentity> {
                                 ],
                               );
                             } else {
-
                               return Column(
                                 children: [
-                                  Image.asset(ImageString.verifyIdentityPic,width: 100,height: 100,),
+                                  Image.asset(ImageString.verifyIdentityPic, width: 100, height: 100),
                                   const SizedBox(height: 12),
                                   Text(
-                                    'Your information is handled securely',
+                                    TextString.secureInfoTitle,
                                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.blackColor,
@@ -279,7 +277,7 @@ class _SignupIdentityState extends State<SignupIdentity> {
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
-                                    'Your identity data is kept secure and used only to verify your identity.',
+                                    TextString.secureInfoDescription,
                                     textAlign: TextAlign.center,
                                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                       color: Colors.grey.shade500,
@@ -287,15 +285,15 @@ class _SignupIdentityState extends State<SignupIdentity> {
                                     ),
                                   ),
                                   const SizedBox(height: 20),
-                                  _buildUploadBox('Identity document', 'other', controller.otherDocumentPath),
+                                  _buildUploadBox(TextString.uploadIdentityDoc, 'other', controller.otherDocumentPath),
                                   const SizedBox(height: 24),
                                   SizedBox(
                                     width: double.infinity,
                                     child: AuthButton(
-                                      text: 'Continue to Verification',
+                                      text: TextString.continueToVerification,
                                       isTablet: isTablet,
                                       onPressed: () {
-
+                                        // Action here if needed
                                       },
                                     ),
                                   ),
@@ -317,7 +315,7 @@ class _SignupIdentityState extends State<SignupIdentity> {
     );
   }
 
-   /// ------------- Extra Widget ----------------- ///
+  /// ------------- Extra Widget ----------------- ///
 
   // Widget for Radio Options Selection Screen
   Widget _buildRadioOption(String title, String svgPath) {
@@ -342,7 +340,7 @@ class _SignupIdentityState extends State<SignupIdentity> {
               svgPath,
               width: 20,
               height: 20,
-              colorFilter: ColorFilter.mode(
+              colorFilter: const ColorFilter.mode(
                 AppColors.primaryColor,
                 BlendMode.srcIn,
               ),
@@ -466,7 +464,7 @@ class _SignupIdentityState extends State<SignupIdentity> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        'Upload Photo',
+                        TextString.uploadPhoto,
                         style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           color: AppColors.primaryColor,
                           fontWeight: FontWeight.w600,

@@ -4,12 +4,14 @@ import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/IconString.dart';
 import 'package:cleaning_app/Resources/ImageString.dart';
 import 'package:cleaning_app/Resources/Routes.dart';
+import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:io';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+
 
 class SignupFace extends StatefulWidget {
   const SignupFace({super.key});
@@ -113,7 +115,7 @@ class _SignupFaceState extends State<SignupFace> {
                               ],
                             ),
                             child: Text(
-                              '04 / 10',
+                              TextString.signupFaceStep,
                               style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                 color: AppColors.primaryColor,
                                 fontWeight: FontWeight.bold,
@@ -124,14 +126,14 @@ class _SignupFaceState extends State<SignupFace> {
                       ),
                       const SizedBox(height: 20),
                       Text(
-                        'Put a Face to Your Profile',
+                        TextString.signupFaceTitle,
                         style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                           fontSize: isTablet ? 28 : 24,
                         ),
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        'Customers can see your profile photo when reviewing your cleaner profile.',
+                        TextString.signupFaceSubtitle,
                         style: Theme.of(context).textTheme.headlineMedium,
                       ),
                       const SizedBox(height: 24),
@@ -212,7 +214,7 @@ class _SignupFaceState extends State<SignupFace> {
                                           colorFilter: const ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn),
                                         ),
                                         label: Text(
-                                          'Take Photo',
+                                          TextString.takePhotoLabel,
                                           style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -240,7 +242,7 @@ class _SignupFaceState extends State<SignupFace> {
                                           colorFilter: const ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn),
                                         ),
                                         label: Text(
-                                          'Choose From Gallery',
+                                          TextString.chooseFromGalleryLabel,
                                           style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -255,7 +257,7 @@ class _SignupFaceState extends State<SignupFace> {
                             SizedBox(
                               width: double.infinity,
                               child: AuthButton(
-                                text: 'Save and Continue',
+                                text: TextString.saveAndContinueButton,
                                 isTablet: isTablet,
                                 onPressed: () {
                                   context.push(Routes.signupIdentity);
@@ -264,7 +266,7 @@ class _SignupFaceState extends State<SignupFace> {
                             ),
                             const SizedBox(height: 12),
                             Text(
-                              'You can update your photo later in your profile.',
+                              TextString.updatePhotoLaterNote,
                               style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                 color: AppColors.primaryColor,
                                 fontSize: 11,

@@ -12,6 +12,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
 
+
 class SignupDetailScreen extends StatefulWidget {
   const SignupDetailScreen({super.key});
 
@@ -366,7 +367,7 @@ class _SignupDetailScreenState extends State<SignupDetailScreen> {
                           text: TextString.saveAndContinueButton,
                           isTablet: isTablet,
                           onPressed: () {
-                             context.push(Routes.signupFaceScreen);
+                            context.push(Routes.signupFaceScreen);
                           },
                         ),
                       ),

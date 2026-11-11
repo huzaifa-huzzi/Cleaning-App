@@ -2,9 +2,12 @@ import 'package:cleaning_app/Authentication/AuthenticationController.dart' show 
 import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/IconString.dart';
 import 'package:cleaning_app/Resources/ImageString.dart';
+import 'package:cleaning_app/Resources/Routes.dart';
+import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 
 class SignupTerms extends StatefulWidget {
@@ -89,7 +92,6 @@ class _SignupTermsState extends State<SignupTerms> {
                               onPressed: () {
                                 if (Navigator.canPop(context)) {
                                   Navigator.pop(context);
-
                                 }
                               },
                             ),
@@ -108,7 +110,7 @@ class _SignupTermsState extends State<SignupTerms> {
                               ],
                             ),
                             child: Text(
-                              '09 / 10',
+                              TextString.signupTermsStep,
                               style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                 color: AppColors.primaryColor,
                                 fontWeight: FontWeight.bold,
@@ -119,7 +121,7 @@ class _SignupTermsState extends State<SignupTerms> {
                       ),
                       const SizedBox(height: 20),
                       Text(
-                        'One Last Step',
+                        TextString.signupTermsTitle,
                         style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                           fontSize: isTablet ? 28 : 24,
                           fontWeight: FontWeight.bold,
@@ -128,7 +130,7 @@ class _SignupTermsState extends State<SignupTerms> {
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        'Please review and acknowledge the policies that apply to your work on the platform.',
+                        TextString.signupTermsSubtitle,
                         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                           fontSize: 13,
                           color: AppColors.secondaryColor,
@@ -138,43 +140,43 @@ class _SignupTermsState extends State<SignupTerms> {
                       const SizedBox(height: 24),
                       _buildPolicyCard(
                         context: context,
-                        title: 'Cleaner Terms of Service',
-                        subtitle: 'Platform rules, responsibilities and account conditions.',
+                        title: TextString.policyCard1Title,
+                        subtitle: TextString.policyCard1Subtitle,
                         svgIconPath: IconString.clearerTerms,
-                        policyContent: 'Here are the complete Cleaner Terms of Service guidelines and platform rules detailing your responsibilities and account conditions...',
+                        policyContent: TextString.policyCard1Content,
                       ),
                       const SizedBox(height: 12),
                       _buildPolicyCard(
                         context: context,
-                        title: 'Commission & Payment Policy',
-                        subtitle: '10% commission, cash reporting, payment records and settlement process.',
+                        title: TextString.policyCard2Title,
+                        subtitle: TextString.policyCard2Subtitle,
                         svgIconPath: IconString.commissionTerms,
-                        policyContent: 'Details regarding the 10% commission fee, cash reporting guidelines, payment records, and the weekly settlement process...',
+                        policyContent: TextString.policyCard2Content,
                       ),
                       const SizedBox(height: 12),
                       _buildPolicyCard(
                         context: context,
-                        title: 'Privacy Policy',
-                        subtitle: 'How personal information is collected, used, stored and disclosed.',
+                        title: TextString.policyCard3Title,
+                        subtitle: TextString.policyCard3Subtitle,
                         svgIconPath: IconString.privacyPolicy,
-                        policyContent: 'Our Privacy Policy explains how your personal data and information are collected, used, securely stored, and disclosed...',
+                        policyContent: TextString.policyCard3Content,
                       ),
                       const SizedBox(height: 24),
                       _buildCheckboxOption(
                         context: context,
-                        title: 'I have read and agree to the Cleaner Terms of Service.',
+                        title: TextString.checkbox1Title,
                         rxBoolValue: controller.agreeToTerms,
                       ),
                       const SizedBox(height: 12),
                       _buildCheckboxOption(
                         context: context,
-                        title: 'I acknowledge the 10% commission and payment policy.',
+                        title: TextString.checkbox2Title,
                         rxBoolValue: controller.agreeToCommission,
                       ),
                       const SizedBox(height: 12),
                       _buildCheckboxOption(
                         context: context,
-                        title: 'I acknowledge the Privacy Policy.',
+                        title: TextString.checkbox3Title,
                         rxBoolValue: controller.agreeToPrivacy,
                       ),
 
@@ -184,7 +186,7 @@ class _SignupTermsState extends State<SignupTerms> {
                         child: ElevatedButton(
                           onPressed: controller.isAllPoliciesAccepted.value
                               ? () {
-
+                            context.push(Routes.signupLastScreen);
                           }
                               : null,
                           style: ElevatedButton.styleFrom(
@@ -197,7 +199,7 @@ class _SignupTermsState extends State<SignupTerms> {
                             elevation: 0,
                           ),
                           child: Text(
-                            'Submit',
+                            TextString.submitButton,
                             style: Theme.of(context).textTheme.titleMedium?.copyWith(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
@@ -222,7 +224,7 @@ class _SignupTermsState extends State<SignupTerms> {
 
   /// ------------- Extra Widgets ----------------- ///
 
-   // Policy Cards
+  // Policy Cards
   Widget _buildPolicyCard({
     required BuildContext context,
     required String title,
@@ -299,7 +301,8 @@ class _SignupTermsState extends State<SignupTerms> {
     );
   }
 
-   // Checkbox Options
+
+  // Checkbox Options
   Widget _buildCheckboxOption({
     required BuildContext context,
     required String title,
@@ -335,7 +338,7 @@ class _SignupTermsState extends State<SignupTerms> {
     ));
   }
 
-   // Policy BottomSheet
+  // Policy BottomSheet
   void _showPolicyBottomSheet(BuildContext context, String title, String content) {
     bool isTablet = MediaQuery.of(context).size.width >= 600;
 
@@ -420,7 +423,7 @@ class _SignupTermsState extends State<SignupTerms> {
                         elevation: 0,
                       ),
                       child: Text(
-                        'I Understand',
+                        TextString.iUnderstandButton,
                         style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,

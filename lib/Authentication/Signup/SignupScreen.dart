@@ -4,11 +4,16 @@ import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/IconString.dart';
 import 'package:cleaning_app/Resources/ImageString.dart';
 import 'package:cleaning_app/Resources/Routes.dart';
+import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -19,8 +24,6 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   final AuthenticationController controller = Get.put(AuthenticationController());
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +84,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
-                          '01 / 10',
+                          TextString.signupStepIndicator,
                           style: Theme.of(context).textTheme.titleSmall?.copyWith(
                             color: AppColors.primaryColor,
                             fontWeight: FontWeight.bold,
@@ -90,19 +93,19 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       const SizedBox(height: 12),
                       Text(
-                        'Start Your Cleaning Journey',
+                        TextString.signupTitle,
                         style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                           fontSize: isTablet ? 28 : 24,
                         ),
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        'Create an account to discover cleaning jobs and grow your income.',
+                        TextString.signupSubtitle,
                         style: Theme.of(context).textTheme.headlineMedium,
                       ),
                       const SizedBox(height: 24),
 
-                      Text('Full Name', style: Theme.of(context).textTheme.titleMedium),
+                      Text(TextString.fullNameLabel, style: Theme.of(context).textTheme.titleMedium),
                       const SizedBox(height: 6),
                       TextFormField(
                         controller: controller.fullNameController,
@@ -111,7 +114,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: AppColors.fieldColors,
-                          hintText: 'Enter Your Full Name',
+                          hintText: TextString.fullNameHint,
                           hintStyle: Theme.of(context).textTheme.titleLarge,
                           prefixIcon: Padding(
                             padding: const EdgeInsets.all(12.0),
@@ -132,7 +135,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
                       ),
                       const SizedBox(height: 16),
-                      Text('Email Address', style: Theme.of(context).textTheme.titleMedium),
+                      Text(TextString.emailLabel, style: Theme.of(context).textTheme.titleMedium),
                       const SizedBox(height: 6),
                       TextFormField(
                         controller: controller.emailController,
@@ -142,12 +145,12 @@ class _SignupScreenState extends State<SignupScreen> {
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: AppColors.fieldColors,
-                          hintText: 'Enter Your Email Address',
+                          hintText: TextString.emailHint,
                           hintStyle: Theme.of(context).textTheme.titleLarge,
                           prefixIcon: Padding(
                             padding: const EdgeInsets.all(12.0),
                             child: SvgPicture.asset(
-                               IconString.email,
+                              IconString.email,
                               width: 20,
                               height: 20,
                               colorFilter: const ColorFilter.mode(
@@ -163,9 +166,9 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
                       ),
                       const SizedBox(height: 16),
-                      _buildPhoneField(context, 'Phone Number'),
+                      _buildPhoneField(context, TextString.phoneLabel),
                       const SizedBox(height: 16),
-                      Text('Password', style: Theme.of(context).textTheme.titleMedium),
+                      Text(TextString.passwordLabel, style: Theme.of(context).textTheme.titleMedium),
                       const SizedBox(height: 6),
                       Obx(
                             () => TextFormField(
@@ -176,7 +179,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: AppColors.fieldColors,
-                            hintText: 'Create a Strong Password',
+                            hintText: TextString.passwordHint,
                             hintStyle: Theme.of(context).textTheme.titleLarge,
                             prefixIcon: const Icon(
                               Icons.lock_outline,
@@ -212,7 +215,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        'Use at least 8 characters, including a number and a letter.',
+                        TextString.passwordHelperText,
                         style: Theme.of(context).textTheme.titleSmall?.copyWith(
                           color: AppColors.primaryColor,
                           fontSize: 11,
@@ -240,7 +243,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           const SizedBox(width: 8),
                           Expanded(
                             child: Text(
-                              'I agree to the Terms and Privacy Policy.',
+                              TextString.agreeTermsText,
                               style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 13),
                             ),
                           ),
@@ -249,7 +252,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       const SizedBox(height: 24),
                       Center(
                         child: AuthButton(
-                          text: 'Create Account',
+                          text: TextString.createAccountButton,
                           isTablet: isTablet,
                           onPressed: () {
                             context.go(Routes.signupVerify);
@@ -262,7 +265,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "Already have an account? ",
+                              TextString.alreadyHaveAccountText,
                               style: Theme.of(context).textTheme.titleLarge,
                             ),
                             GestureDetector(
@@ -270,7 +273,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 context.go(Routes.login);
                               },
                               child: Text(
-                                'Log In',
+                                TextString.loginButtonText,
                                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primaryColor,
@@ -291,7 +294,9 @@ class _SignupScreenState extends State<SignupScreen> {
       ),
     );
   }
-   /// -------------- Extra Widget --------------- ///
+
+  /// -------------- Extra Widget --------------- ///
+
   // Flag Emoji Helper
   String _getFlagEmoji(String countryCode) {
     return countryCode.toUpperCase().replaceAllMapped(
@@ -320,7 +325,7 @@ class _SignupScreenState extends State<SignupScreen> {
           isDense: true,
           fillColor: AppColors.backgroundOfScreenColor,
           filled: true,
-          hintText: 'Search',
+          hintText: TextString.searchHintText,
           hintStyle: Theme.of(context).textTheme.titleLarge,
           prefixIcon: const Icon(Icons.search, size: 18, color: AppColors.primaryColor),
           enabledBorder: OutlineInputBorder(
@@ -366,7 +371,7 @@ class _SignupScreenState extends State<SignupScreen> {
             decoration: InputDecoration(
               filled: true,
               fillColor: AppColors.fieldColors,
-              hintText: "Enter number",
+              hintText: TextString.phoneHint,
               hintStyle: Theme.of(context).textTheme.titleLarge,
               prefixIcon: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),

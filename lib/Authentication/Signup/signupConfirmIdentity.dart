@@ -5,6 +5,7 @@ import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/IconString.dart';
 import 'package:cleaning_app/Resources/ImageString.dart';
 import 'package:cleaning_app/Resources/Routes.dart';
+import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -117,7 +118,7 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
                               ],
                             ),
                             child: Text(
-                              '06 / 10',
+                              TextString.confirmIdentityStep,
                               style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                 color: AppColors.primaryColor,
                                 fontWeight: FontWeight.bold,
@@ -129,7 +130,7 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
                       const SizedBox(height: 20),
 
                       Text(
-                        'Confirm Your Right to Work',
+                        TextString.confirmIdentityTitle,
                         style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                           fontSize: isTablet ? 28 : 24,
                           fontWeight: FontWeight.bold,
@@ -139,8 +140,8 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
                       const SizedBox(height: 6),
                       Obx(() => Text(
                         controller.isRightToWorkSubmitted.value
-                            ? 'Your information is handled securely\nYour identity data is kept secure and used only to verify your identity.'
-                            : 'We need to check whether you can legally perform the cleaning work offered through our platform.',
+                            ? TextString.secureInfoSubtitle
+                            : TextString.confirmIdentitySubtitle,
                         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                           fontSize: 13,
                           color: AppColors.secondaryColor,
@@ -163,22 +164,22 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
                               children: [
                                 Image.asset(ImageString.confirmRight, width: 100, height: 100),
                                 const SizedBox(height: 20),
-                                _buildRadioOption('Australian citizen', IconString.australianCitizen),
+                                _buildRadioOption(TextString.optionAustralianCitizen, IconString.australianCitizen),
                                 const SizedBox(height: 12),
-                                _buildRadioOption('Australian permanent resident', IconString.australianPr),
+                                _buildRadioOption(TextString.optionPermanentResident, IconString.australianPr),
                                 const SizedBox(height: 12),
-                                _buildRadioOption('Visa holder', IconString.visaHolder),
+                                _buildRadioOption(TextString.optionVisaHolder, IconString.visaHolder),
                                 const SizedBox(height: 24),
                                 SizedBox(
                                   width: double.infinity,
                                   child: AuthButton(
-                                    text: 'Continue to Verification',
+                                    text: TextString.continueToVerification,
                                     isTablet: isTablet,
                                     onPressed: () {
                                       if (controller.selectedRightToWorkType.value.isNotEmpty) {
                                         controller.isRightToWorkSubmitted.value = true;
                                       } else {
-                                        Get.snackbar('Error', 'Please select an option to continue');
+                                        Get.snackbar(TextString.errorTitle, TextString.errorSelectOption);
                                       }
                                     },
                                   ),
@@ -186,13 +187,12 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
                               ],
                             );
                           } else {
-
                             return Column(
                               children: [
                                 Image.asset(ImageString.confirmRight, width: 100, height: 100),
                                 const SizedBox(height: 12),
                                 Text(
-                                  'Your information is handled securely',
+                                  TextString.secureInfoTitle,
                                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.blackColor,
@@ -201,7 +201,7 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
-                                  'Your identity data is kept secure and used only to verify your identity.',
+                                  TextString.secureInfoDescription,
                                   textAlign: TextAlign.center,
                                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                     color: Colors.grey.shade500,
@@ -209,14 +209,14 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
                                   ),
                                 ),
                                 const SizedBox(height: 20),
-                                _buildUploadBox('Front of Identification Card', 'front', controller.citizenDocumentPath),
+                                _buildUploadBox(TextString.uploadFrontCard, 'front', controller.citizenDocumentPath),
                                 const SizedBox(height: 16),
-                                _buildUploadBox('Back of Identification Card', 'back', controller.permanentResidentDocumentPath),
+                                _buildUploadBox(TextString.uploadBackCard, 'back', controller.permanentResidentDocumentPath),
                                 const SizedBox(height: 24),
                                 SizedBox(
                                   width: double.infinity,
                                   child: AuthButton(
-                                    text: 'Continue to Verification',
+                                    text: TextString.continueToVerification,
                                     isTablet: isTablet,
                                     onPressed: () {
                                       context.push(Routes.signupCleaning);
@@ -242,7 +242,7 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
 
   /// ------------- Extra Widgets ----------------- ///
 
-   // Radio Options
+  // Radio Options
   Widget _buildRadioOption(String title, String svgPath) {
     bool isSelected = controller.selectedRightToWorkType.value == title;
     return GestureDetector(
@@ -297,7 +297,7 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
     );
   }
 
-   // Upload Box
+  // Upload Box
   Widget _buildUploadBox(String label, String docType, RxString pathRx) {
     return Container(
       padding: const EdgeInsets.all(12),
@@ -389,7 +389,7 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        'Upload Photo',
+                        TextString.uploadPhoto,
                         style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           color: AppColors.primaryColor,
                           fontWeight: FontWeight.w600,
