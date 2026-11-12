@@ -351,11 +351,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         decoration: BoxDecoration(
                           color: AppColors.containerBackground,
                           borderRadius: BorderRadius.circular(16),
+
+                          border: Border.all(
+                            color: AppColors.whiteColor.withOpacity(0.15),
+                            width: 1.2,
+                          ),
                           boxShadow: [
                             BoxShadow(
-                              color: AppColors.blackColor.withOpacity(0.04),
-                              blurRadius: 10,
-                              offset: const Offset(0, 2),
+                              color: AppColors.blackColor.withOpacity(0.06),
+                              blurRadius: 12,
+                              offset: const Offset(0, 4),
                             ),
                           ],
                         ),
@@ -377,7 +382,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                   decoration: BoxDecoration(
                                     color: AppColors.mainGreenColor,
-                                    borderRadius: BorderRadius.circular(6),
+                                    borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Text(
                                     'Completed',
