@@ -29,6 +29,7 @@ class IconString {
   static const String  profileIcon = 'Assets/icons/ProfileIcon.svg';
   static const String  menuIcon = 'Assets/icons/Menu.svg';
   static const String  notification = 'Assets/icons/Notification.svg';
+  static const String  verifiedIcon = 'Assets/icons/VerifiedCleaner.svg';
 
 
 

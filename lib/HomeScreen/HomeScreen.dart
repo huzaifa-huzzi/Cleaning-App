@@ -115,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: Container(
                                           width: 8,
                                           height: 8,
-                                          decoration:  BoxDecoration(
+                                          decoration: BoxDecoration(
                                             color: AppColors.redColor,
                                             shape: BoxShape.circle,
                                           ),
@@ -139,15 +139,23 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 12),
+                          const SizedBox(height: 6),
                           Row(
                             children: [
-                              Icon(Icons.verified, color: Colors.greenAccent, size: isTablet ? 20 : 16),
+                              SvgPicture.asset(
+                                IconString.verifiedIcon,
+                                width: isTablet ? 28 : 24,
+                                height: isTablet ? 28 : 24,
+                                colorFilter: ColorFilter.mode(
+                                  AppColors.smallNumberGreener,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
                               const SizedBox(width: 6),
                               Text(
                                 'Verified Cleaner',
                                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                  color: AppColors.smallNumberCleaner,
+                                  color: AppColors.smallNumberGreener,
                                   fontWeight: FontWeight.w500,
                                   fontSize: isTablet ? 14 : 12,
                                 ),
@@ -207,7 +215,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             GestureDetector(
                               behavior: HitTestBehavior.opaque,
                               onTap: () {
-
                                 if (!controller.isOnline.value) {
                                   controller.toggleAvailability();
                                 } else {
@@ -224,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 alignment: Alignment.center,
                                 child: Text(
                                   controller.isOnline.value ? 'Browse Available Jobs' : 'Go Online',
-                                  style: TextStyle(
+                                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                     fontSize: isTablet ? 18 : 16,
                                     fontWeight: FontWeight.w600,
                                     color: AppColors.whiteColor,
@@ -346,7 +353,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderRadius: BorderRadius.circular(16),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.04),
+                              color: AppColors.blackColor.withOpacity(0.04),
                               blurRadius: 10,
                               offset: const Offset(0, 2),
                             ),
