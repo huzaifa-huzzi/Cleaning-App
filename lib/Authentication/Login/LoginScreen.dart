@@ -189,7 +189,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: AuthButton(
                           text: TextString.createAccountButton,
                           isTablet: isTablet,
-                          onPressed: () {},
+                          onPressed: () {
+                            context.push(Routes.dashboardScreen);
+                          },
                         ),
                       ),
                       const SizedBox(height: 16),

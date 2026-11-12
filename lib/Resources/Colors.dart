@@ -8,5 +8,12 @@ class AppColors {
   static const Color fieldColors = Color(0xffF1F5FE);
   static const Color whiteColor = Color(0xFFFFFFFF);
   static const Color photoBackground =  Color(0xFFE8ECF4);
+  static const Color navbarColor =  Color(0xFFF6F8FC);
+  static const Color containerBackground =  Color(0xFFF1F5FE);
   static const Color blackColor = Colors.black;
+  static const Color redColor = Color(0xFFD80027);
+  static const Color smallNumberCleaner = Color(0xFF65F0B2);
+  static const Color mainGreenColor = Color(0xFF22A85A);
+  static const Color yellowColor= Color( 0xFFF5A623);
+  static const Color purpleColor= Color( 0xFF943DFF);
 }

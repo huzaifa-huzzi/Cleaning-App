@@ -1,9 +1,11 @@
 import 'package:cleaning_app/Authentication/AuthenticationController.dart';
 import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/ImageString.dart';
+import 'package:cleaning_app/Resources/Routes.dart';
 import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 
 class SignupLastScreen extends StatefulWidget {
@@ -154,6 +156,7 @@ class _SignupLastScreenState extends State<SignupLastScreen> {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
+                            context.push(Routes.dashboardScreen);
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: AppColors.primaryColor,

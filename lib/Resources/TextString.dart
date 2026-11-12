@@ -203,4 +203,10 @@ class TextString {
   static const String noticeTitle = 'Notice';
   static const String watchCompleteVideoNotice = 'Please watch the complete video to continue.';
 
+  /// Dashboard
+  static const String navHome = 'Home';
+  static const String navBookings = 'Bookings';
+  static const String navEarnings = 'Earnings';
+  static const String navProfile = 'Profile';
+
 }

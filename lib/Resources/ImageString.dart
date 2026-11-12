@@ -17,4 +17,8 @@ class ImageString {
   static const String confirmRight = 'Assets/Image/Auth/ConfirmRight.png';
   static const String cleaningService = 'Assets/Image/Auth/CleaningService.png';
   static const String cleaningServiceVideo = 'Assets/Image/Auth/cleaningServiceVideo.mp4';
+
+   // Home
+  static const String homebackgroundScreen = 'Assets/Image/Home/BlueBackground.png';
+  static const String avatarIcon = 'Assets/Image/Home/AvatarIcon.png';
 }

@@ -13,6 +13,9 @@ import 'package:cleaning_app/Authentication/Signup/SignupTutorial.dart';
 import 'package:cleaning_app/Authentication/Signup/SignupVerifyScreen.dart';
 import 'package:cleaning_app/Authentication/Signup/signupConfirmIdentity.dart';
 import 'package:cleaning_app/Authentication/VerifyNumber/VerifyNumber.dart';
+import 'package:cleaning_app/Dashboard/DashboardMainScreen.dart';
+import 'package:cleaning_app/HomeScreen/BrowseJobScreen.dart';
+import 'package:cleaning_app/HomeScreen/HomeScreen.dart';
 import 'package:cleaning_app/Onboarding/OnboardingScreen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +38,9 @@ class Routes {
   static const String signupTutorial = '/signupTutorial';
   static const String signupTerms = '/signupTerms';
   static const String signupLastScreen = '/signupLastScreen';
+  static const String dashboardScreen = '/dashboardScreen';
+  static const String homeScreen = '/homeScreen';
+  static const String BrowseJobScreen = '/browseJobScreen';
 
 
 
@@ -105,6 +111,18 @@ class Routes {
       GoRoute(
         path: signupLastScreen,
         builder: (context, state) => const SignupLastScreen(),
+      ),
+      GoRoute(
+        path: dashboardScreen,
+        builder: (context, state) => const DashboardMainScreen(),
+      ),
+      GoRoute(
+        path: homeScreen,
+        builder: (context, state) => const HomeScreen(),
+      ),
+      GoRoute(
+        path: BrowseJobScreen,
+        builder: (context, state) =>  BrowseJobsScreen(),
       ),
     ],
   );

@@ -23,6 +23,12 @@ class IconString {
   static const String  clearerTerms = 'Assets/icons/ClearerTerms.svg';
   static const String  commissionTerms = 'Assets/icons/Commision.svg';
   static const String  privacyPolicy = 'Assets/icons/PrivacyPolicy.svg';
+  static const String  bookingScreenIcon = 'Assets/icons/BookingScreenIcon.svg';
+  static const String  earningScreenIcon = 'Assets/icons/EarningIcon.svg';
+  static const String  homeScreenIcon = 'Assets/icons/HomeScreenIcon.svg';
+  static const String  profileIcon = 'Assets/icons/ProfileIcon.svg';
+  static const String  menuIcon = 'Assets/icons/Menu.svg';
+  static const String  notification = 'Assets/icons/Notification.svg';
 
 
 

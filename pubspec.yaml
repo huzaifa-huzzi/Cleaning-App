@@ -33,6 +33,7 @@ dependencies:
   fl_chart: ^0.70.0
   flutter_svg: ^2.3.2
   video_player: ^2.8.6
+  persistent_bottom_nav_bar: ^6.2.1
 
   # Forms, Input & Pickers
   intl: ^0.20.3
@@ -57,4 +58,5 @@ flutter:
     - Assets/icons/
     - Assets/Image/
     - Assets/Image/Auth/
+    - Assets/Image/Home/
 
