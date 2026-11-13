@@ -172,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Container(
                         padding: EdgeInsets.all(isTablet ? 24 : 18),
                         decoration: BoxDecoration(
-                          color: AppColors.whiteColor,
+                          color: AppColors.containerBackground,
                           borderRadius: BorderRadius.circular(16),
                           boxShadow: [
                             BoxShadow(
@@ -217,9 +217,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               onTap: () {
                                 if (!controller.isOnline.value) {
                                   controller.toggleAvailability();
-                                } else {
-                                  context.push(Routes.BrowseJobScreen);
                                 }
+                                context.push(Routes.BrowseJobScreen);
                               },
                               child: Container(
                                 width: isTablet ? 450 : double.infinity,
@@ -467,7 +466,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       backgroundColor: AppColors.primaryColor,
                                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      context.push(Routes.homeJobDetailScreen);
+                                    },
                                     child: Text(
                                       'View Booking',
                                       style: Theme.of(context).textTheme.labelLarge?.copyWith(
@@ -509,7 +510,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       padding: EdgeInsets.all(isTablet ? 18 : 14),
       decoration: BoxDecoration(
-        color: AppColors.whiteColor,
+        color: AppColors.containerBackground,
         borderRadius: BorderRadius.circular(14),
         boxShadow: [
           BoxShadow(

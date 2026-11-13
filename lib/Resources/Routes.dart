@@ -15,11 +15,12 @@ import 'package:cleaning_app/Authentication/Signup/signupConfirmIdentity.dart';
 import 'package:cleaning_app/Authentication/VerifyNumber/VerifyNumber.dart';
 import 'package:cleaning_app/Dashboard/DashboardMainScreen.dart';
 import 'package:cleaning_app/HomeScreen/BrowseJobScreen.dart';
+import 'package:cleaning_app/HomeScreen/HomeChatScreen.dart';
+import 'package:cleaning_app/HomeScreen/HomeJobDetailScreen.dart';
 import 'package:cleaning_app/HomeScreen/HomeScreen.dart';
 import 'package:cleaning_app/Onboarding/OnboardingScreen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
-
 
 class Routes {
   // Route names constants
@@ -41,10 +42,10 @@ class Routes {
   static const String dashboardScreen = '/dashboardScreen';
   static const String homeScreen = '/homeScreen';
   static const String BrowseJobScreen = '/browseJobScreen';
+  static const String homeJobDetailScreen = '/homeJobDetailScreen';
+  static const String homeChatScreen = '/homeChatScreen';
 
 
-
-  // GoRouter Configuration
   static final GoRouter router = GoRouter(
     initialLocation: onboarding,
     routes: [
@@ -60,8 +61,7 @@ class Routes {
       ),
       GoRoute(
         path: forgotPassword,
-        name: 'forgotPassword',
-        builder: (BuildContext context, GoRouterState state) => const ForgotPassword(),
+        builder: (context, state) => const ForgotPassword(),
       ),
       GoRoute(
         path: verifyNumber,
@@ -83,7 +83,6 @@ class Routes {
         path: signupDetailScreen,
         builder: (context, state) => const SignupDetailScreen(),
       ),
-
       GoRoute(
         path: signupFaceScreen,
         builder: (context, state) => const SignupFace(),
@@ -112,17 +111,33 @@ class Routes {
         path: signupLastScreen,
         builder: (context, state) => const SignupLastScreen(),
       ),
-      GoRoute(
-        path: dashboardScreen,
-        builder: (context, state) => const DashboardMainScreen(),
-      ),
-      GoRoute(
-        path: homeScreen,
-        builder: (context, state) => const HomeScreen(),
-      ),
-      GoRoute(
-        path: BrowseJobScreen,
-        builder: (context, state) =>  BrowseJobsScreen(),
+
+      ShellRoute(
+        builder: (context, state, child) {
+          return DashboardMainScreen(child: child);
+        },
+        routes: [
+          GoRoute(
+            path: dashboardScreen,
+            builder: (context, state) => const HomeScreen(),
+          ),
+          GoRoute(
+            path: homeScreen,
+            builder: (context, state) => const HomeScreen(),
+          ),
+          GoRoute(
+            path: BrowseJobScreen,
+            builder: (context, state) => BrowseJobsScreen(),
+          ),
+          GoRoute(
+            path: homeJobDetailScreen,
+            builder: (context, state) => HomeJobDetailScreen(),
+          ),
+          GoRoute(
+            path: homeChatScreen,
+            builder: (context, state) => const HomeChatScreen(),
+          ),
+        ],
       ),
     ],
   );

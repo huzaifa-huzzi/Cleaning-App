@@ -16,4 +16,6 @@ class AppColors {
   static const Color mainGreenColor = Color(0xFF22A85A);
   static const Color yellowColor= Color( 0xFFF5A623);
   static const Color purpleColor= Color( 0xFF943DFF);
+  static const Color unselectedFilterColor= Color( 0xFFB3CFF9);
+  static const Color chatOppositeColor= Color( 0xFFE3EDFF);
 }

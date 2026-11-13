@@ -1,18 +1,29 @@
+import 'package:cleaning_app/Resources/Routes.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:go_router/go_router.dart';
 
 class DashboardController extends GetxController {
-  late PersistentTabController tabController;
+  var unreadNotificationsCount = 3.obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-    tabController = PersistentTabController(initialIndex: 0);
+  void updateNotificationCount(int count) {
+    unreadNotificationsCount.value = count;
   }
 
-  @override
-  void onClose() {
-    tabController.dispose();
-    super.onClose();
+  void changeTab(BuildContext context, int index) {
+    switch (index) {
+      case 0:
+        context.go(Routes.homeScreen);
+        break;
+      case 1:
+        context.go('/bookings');
+        break;
+      case 2:
+        context.go('/earnings');
+        break;
+      case 3:
+        context.go('/profile');
+        break;
+    }
   }
 }

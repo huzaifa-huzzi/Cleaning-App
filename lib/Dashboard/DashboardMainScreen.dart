@@ -1,155 +1,160 @@
 import 'package:cleaning_app/Dashboard/DashboardController.dart';
-import 'package:cleaning_app/HomeScreen/HomeScreen.dart';
 import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/IconString.dart';
+import 'package:cleaning_app/Resources/Routes.dart';
 import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 import 'package:get/get.dart';
-import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
+import 'package:go_router/go_router.dart';
 
 class DashboardMainScreen extends StatefulWidget {
-  const DashboardMainScreen({super.key});
+  final Widget child;
+  const DashboardMainScreen({super.key, required this.child});
 
   @override
   State<DashboardMainScreen> createState() => _DashboardMainScreenState();
 }
 
 class _DashboardMainScreenState extends State<DashboardMainScreen> {
+
   final DashboardController controller = Get.put(DashboardController());
 
-  // 1. Screens ki list (Har tab ki apni screen)
-  List<Widget> _buildScreens() {
-    return [
-      HomeScreen(),
-      const Center(child: Text('Bookings Screen')),
-      const Center(child: Text('Earnings Screen')),
-      const Center(child: Text('Profile Screen')),
-    ];
-  }
-
-  // 2. Navigation Bar Items
-  List<PersistentBottomNavBarItem> _navBarsItems(BuildContext context) {
-    TextStyle labelStyle = Theme.of(context).textTheme.titleSmall?.copyWith(
-      fontSize: 11,
-      fontWeight: FontWeight.w600,
-    ) ??
-        const TextStyle(fontSize: 11, fontWeight: FontWeight.w600);
-
-    return [
-      PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(
-          IconString.homeScreenIcon,
-          width: 20,
-          height: 20,
-          colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-        ),
-        inactiveIcon: SvgPicture.asset(
-          IconString.homeScreenIcon,
-          width: 20,
-          height: 20,
-          colorFilter: const ColorFilter.mode(AppColors.secondaryColor, BlendMode.srcIn),
-        ),
-        title: TextString.navHome,
-        activeColorPrimary: AppColors.primaryColor, // Pill background color
-        activeColorSecondary: Colors.white,         // Selected icon & text color
-        inactiveColorPrimary: AppColors.secondaryColor, // Unselected color
-        textStyle: labelStyle,
-      ),
-      PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(
-          IconString.bookingScreenIcon,
-          width: 20,
-          height: 20,
-          colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-        ),
-        inactiveIcon: SvgPicture.asset(
-          IconString.bookingScreenIcon,
-          width: 20,
-          height: 20,
-          colorFilter: const ColorFilter.mode(AppColors.secondaryColor, BlendMode.srcIn),
-        ),
-        title: TextString.navBookings,
-        activeColorPrimary: AppColors.primaryColor,
-        activeColorSecondary: Colors.white,
-        inactiveColorPrimary: AppColors.secondaryColor,
-        textStyle: labelStyle,
-      ),
-      PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(
-          IconString.earningScreenIcon,
-          width: 20,
-          height: 20,
-          colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-        ),
-        inactiveIcon: SvgPicture.asset(
-          IconString.earningScreenIcon,
-          width: 20,
-          height: 20,
-          colorFilter: const ColorFilter.mode(AppColors.secondaryColor, BlendMode.srcIn),
-        ),
-        title: TextString.navEarnings,
-        activeColorPrimary: AppColors.primaryColor,
-        activeColorSecondary: Colors.white,
-        inactiveColorPrimary: AppColors.secondaryColor,
-        textStyle: labelStyle,
-      ),
-      PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(
-          IconString.profileIcon,
-          width: 20,
-          height: 20,
-          colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-        ),
-        inactiveIcon: SvgPicture.asset(
-          IconString.profileIcon,
-          width: 20,
-          height: 20,
-          colorFilter: const ColorFilter.mode(AppColors.secondaryColor, BlendMode.srcIn),
-        ),
-        title: TextString.navProfile,
-        activeColorPrimary: AppColors.primaryColor,
-        activeColorSecondary: Colors.white,
-        inactiveColorPrimary: AppColors.secondaryColor,
-        textStyle: labelStyle,
-      ),
-    ];
+  int _calculateSelectedIndex(BuildContext context) {
+    final String location = GoRouterState.of(context).uri.path;
+    if (location.contains(Routes.homeScreen) || location.contains(Routes.dashboardScreen)) {
+      return 0;
+    } else if (location.contains('/booking')) {
+      return 1;
+    } else if (location.contains('/earnng')) {
+      return 2;
+    } else if (location.contains('/profile')) {
+      return 3;
+    }
+    return 0;
   }
 
   @override
   Widget build(BuildContext context) {
     bool isTablet = MediaQuery.of(context).size.width >= 600;
+    int currentIndex = _calculateSelectedIndex(context);
 
-    return PersistentTabView(
-      context,
-      controller: controller.tabController,
-      screens: _buildScreens(),
-      items: _navBarsItems(context),
-      handleAndroidBackButtonPress: true,
-      resizeToAvoidBottomInset: true,
-      stateManagement: true,
-      hideNavigationBarWhenKeyboardAppears: true,
-      backgroundColor: AppColors.whiteColor,
-      navBarHeight: 68,
-      margin: EdgeInsets.symmetric(
-        horizontal: isTablet ? 80.0 : 16.0,
-        vertical: 20.0,
+    return Scaffold(
+      backgroundColor: AppColors.navbarColor,
+      body: widget.child,
+      bottomNavigationBar: Container(
+        height: 68,
+        margin: EdgeInsets.symmetric(
+          horizontal: isTablet ? 80.0 : 16.0,
+          vertical: 20.0,
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        decoration: BoxDecoration(
+          color: AppColors.whiteColor,
+          borderRadius: BorderRadius.circular(22.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.06),
+              blurRadius: 10,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            _buildNavItem(
+              context,
+              index: 0,
+              currentIndex: currentIndex,
+              iconPath: IconString.homeScreenIcon,
+              title: TextString.navHome,
+              route: Routes.homeScreen,
+            ),
+            _buildNavItem(
+              context,
+              index: 1,
+              currentIndex: currentIndex,
+              iconPath: IconString.bookingScreenIcon,
+              title: TextString.navBookings,
+              route:'/booking'
+            ),
+            _buildNavItem(
+              context,
+              index: 2,
+              currentIndex: currentIndex,
+              iconPath: IconString.earningScreenIcon,
+              title: TextString.navEarnings,
+              route: '/earning'
+            ),
+            _buildNavItem(
+              context,
+              index: 3,
+              currentIndex: currentIndex,
+              iconPath: IconString.profileIcon,
+              title: TextString.navProfile,
+              route: '/profile'
+            ),
+          ],
+        ),
       ),
-      decoration: NavBarDecoration(
-        borderRadius: BorderRadius.circular(22.0),
-        colorBehindNavBar: AppColors.backgroundOfScreenColor,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.06),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
+    );
+  }
+
+  /// ------------- Extra Widget -------------------///
+  // Nav Item Widget
+  Widget _buildNavItem(
+      BuildContext context, {
+        required int index,
+        required int currentIndex,
+        required String iconPath,
+        required String title,
+        required String route,
+      }) {
+    bool isSelected = currentIndex == index;
+    TextStyle labelStyle = Theme.of(context).textTheme.titleSmall?.copyWith(
+      fontSize: 11,
+      fontWeight: FontWeight.w600,
+      color: AppColors.whiteColor,
+    ) ??
+        const TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: AppColors.whiteColor);
+
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () {
+        if (currentIndex != index) {
+          context.go(route);
+        }
+      },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeInOut,
+        padding: EdgeInsets.symmetric(horizontal: isSelected ? 14 : 10, vertical: 8),
+        decoration: BoxDecoration(
+          color: isSelected ? AppColors.primaryColor : Colors.transparent,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SvgPicture.asset(
+              iconPath,
+              width: 20,
+              height: 20,
+              colorFilter: ColorFilter.mode(
+                isSelected ? AppColors.whiteColor : AppColors.secondaryColor,
+                BlendMode.srcIn,
+              ),
+            ),
+            if (isSelected) ...[
+              const SizedBox(width: 6),
+              Text(title, style: labelStyle),
+            ],
+          ],
+        ),
       ),
-      navBarStyle: NavBarStyle.style7,
     );
   }
 }

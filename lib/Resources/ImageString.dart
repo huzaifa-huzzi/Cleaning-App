@@ -21,4 +21,5 @@ class ImageString {
    // Home
   static const String homebackgroundScreen = 'Assets/Image/Home/BlueBackground.png';
   static const String avatarIcon = 'Assets/Image/Home/AvatarIcon.png';
+  static const String calendarIcon = 'Assets/Image/Home/CalendarIcon.png';
 }

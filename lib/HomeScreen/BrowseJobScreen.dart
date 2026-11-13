@@ -1,8 +1,12 @@
 import 'package:cleaning_app/HomeScreen/HomeController.dart' show HomeController;
 import 'package:cleaning_app/Resources/Colors.dart';
+import 'package:cleaning_app/Resources/IconString.dart';
 import 'package:cleaning_app/Resources/ImageString.dart' show ImageString;
+import 'package:cleaning_app/Resources/Routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class BrowseJobsScreen extends StatelessWidget {
   BrowseJobsScreen({super.key});
@@ -13,6 +17,7 @@ class BrowseJobsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     bool isTablet = screenWidth >= 600;
+    final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: AppColors.backgroundOfScreenColor,
@@ -31,8 +36,7 @@ class BrowseJobsScreen extends StatelessWidget {
                       width: double.infinity,
                       height: isTablet ? 310 : 270,
                     ),
-
-                    // Header Background Container with Image
+                    // Header Background Container
                     Container(
                       width: double.infinity,
                       height: isTablet ? 260 : 220,
@@ -57,7 +61,11 @@ class BrowseJobsScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   IconButton(
-                                    icon: Icon(Icons.arrow_back, color: Colors.white, size: isTablet ? 28 : 24),
+                                    icon: Icon(
+                                      Icons.arrow_back,
+                                      color: AppColors.whiteColor,
+                                      size: isTablet ? 28 : 24,
+                                    ),
                                     onPressed: () => Navigator.pop(context),
                                     padding: EdgeInsets.zero,
                                     constraints: const BoxConstraints(),
@@ -68,8 +76,8 @@ class BrowseJobsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Available Jobs',
-                                        style: TextStyle(
-                                          color: Colors.white,
+                                        style: textTheme.headlineLarge?.copyWith(
+                                          color: AppColors.whiteColor,
                                           fontSize: isTablet ? 20 : 16,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -77,8 +85,8 @@ class BrowseJobsScreen extends StatelessWidget {
                                       const SizedBox(height: 2),
                                       Text(
                                         'Find your next cleaning job',
-                                        style: TextStyle(
-                                          color: Colors.white70,
+                                        style: textTheme.titleSmall?.copyWith(
+                                          color: AppColors.whiteColor.withOpacity(0.7),
                                           fontSize: isTablet ? 14 : 11,
                                         ),
                                       ),
@@ -91,7 +99,15 @@ class BrowseJobsScreen extends StatelessWidget {
                                   Stack(
                                     children: [
                                       IconButton(
-                                        icon: Icon(Icons.notifications_outlined, color: Colors.white, size: isTablet ? 28 : 24),
+                                        icon: SvgPicture.asset(
+                                          IconString.notification,
+                                          width: isTablet ? 28 : 24,
+                                          height: isTablet ? 28 : 24,
+                                          colorFilter: const ColorFilter.mode(
+                                            AppColors.whiteColor,
+                                            BlendMode.srcIn,
+                                          ),
+                                        ),
                                         onPressed: () {},
                                       ),
                                       Positioned(
@@ -101,7 +117,7 @@ class BrowseJobsScreen extends StatelessWidget {
                                           width: 8,
                                           height: 8,
                                           decoration: const BoxDecoration(
-                                            color: Colors.red,
+                                            color: AppColors.redColor,
                                             shape: BoxShape.circle,
                                           ),
                                         ),
@@ -109,7 +125,15 @@ class BrowseJobsScreen extends StatelessWidget {
                                     ],
                                   ),
                                   IconButton(
-                                    icon: Icon(Icons.menu, color: Colors.white, size: isTablet ? 28 : 24),
+                                    icon: SvgPicture.asset(
+                                      IconString.menuIcon,
+                                      width: isTablet ? 28 : 24,
+                                      height: isTablet ? 28 : 24,
+                                      colorFilter: const ColorFilter.mode(
+                                        AppColors.whiteColor,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
                                     onPressed: () {},
                                   ),
                                 ],
@@ -119,8 +143,6 @@ class BrowseJobsScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-
-                    // Stacked Online Status Card
                     Positioned(
                       top: isTablet ? 175 : 145,
                       left: isTablet ? 32 : 20,
@@ -128,13 +150,14 @@ class BrowseJobsScreen extends StatelessWidget {
                       child: Container(
                         padding: EdgeInsets.all(isTablet ? 24 : 18),
                         decoration: BoxDecoration(
-                          color: AppColors.whiteColor,
+                          color: AppColors.containerBackground,
                           borderRadius: BorderRadius.circular(16),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.08),
-                              blurRadius: 15,
-                              offset: const Offset(0, 5),
+                              color: AppColors.blackColor.withOpacity(0.03),
+                              blurRadius: 12,
+                              spreadRadius: 0,
+                              offset: const Offset(0, 4),
                             ),
                           ],
                         ),
@@ -143,7 +166,7 @@ class BrowseJobsScreen extends StatelessWidget {
                           children: [
                             Text(
                               'Your availability',
-                              style: TextStyle(
+                              style: textTheme.titleSmall?.copyWith(
                                 color: AppColors.secondaryColor,
                                 fontSize: isTablet ? 14 : 12,
                               ),
@@ -151,8 +174,8 @@ class BrowseJobsScreen extends StatelessWidget {
                             const SizedBox(height: 6),
                             Text(
                               "You're Online!",
-                              style: TextStyle(
-                                color: Colors.green,
+                              style: textTheme.headlineLarge?.copyWith(
+                                color: AppColors.mainGreenColor,
                                 fontWeight: FontWeight.bold,
                                 fontSize: isTablet ? 22 : 18,
                               ),
@@ -160,7 +183,7 @@ class BrowseJobsScreen extends StatelessWidget {
                             const SizedBox(height: 6),
                             Text(
                               'New matching jobs can appear here.',
-                              style: TextStyle(
+                              style: textTheme.titleSmall?.copyWith(
                                 color: AppColors.secondaryColor,
                                 fontSize: isTablet ? 14 : 12,
                               ),
@@ -174,22 +197,20 @@ class BrowseJobsScreen extends StatelessWidget {
 
                 const SizedBox(height: 10),
 
-                // Selectable Filter Chips using Controller state
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: isTablet ? 32 : 20),
                   child: Obx(() => Row(
                     children: [
-                      _buildFilterChip('All Jobs', 0, isTablet),
+                      _buildFilterChip(context, 'All Jobs', 0, isTablet),
                       const SizedBox(width: 10),
-                      _buildFilterChip('Home Cleaning', 1, isTablet),
+                      _buildFilterChip(context, 'Home Cleaning', 1, isTablet),
                       const SizedBox(width: 10),
-                      _buildFilterChip('Deep cleaning', 2, isTablet),
+                      _buildFilterChip(context, 'Deep cleaning', 2, isTablet),
                     ],
                   )),
                 ),
                 const SizedBox(height: 20),
 
-                // Jobs Header
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: isTablet ? 32 : 20),
                   child: Row(
@@ -197,7 +218,7 @@ class BrowseJobsScreen extends StatelessWidget {
                     children: [
                       Text(
                         'Jobs near your service area',
-                        style: TextStyle(
+                        style: textTheme.headlineLarge?.copyWith(
                           fontWeight: FontWeight.bold,
                           fontSize: isTablet ? 18 : 16,
                           color: AppColors.blackColor,
@@ -205,7 +226,7 @@ class BrowseJobsScreen extends StatelessWidget {
                       ),
                       Text(
                         '3 Jobs',
-                        style: TextStyle(
+                        style: textTheme.headlineSmall?.copyWith(
                           color: AppColors.primaryColor,
                           fontWeight: FontWeight.w600,
                           fontSize: isTablet ? 14 : 12,
@@ -216,7 +237,6 @@ class BrowseJobsScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 12),
 
-                // Job List Items
                 ListView.builder(
                   itemCount: 3,
                   shrinkWrap: true,
@@ -229,11 +249,11 @@ class BrowseJobsScreen extends StatelessWidget {
                       ),
                       padding: EdgeInsets.all(isTablet ? 20 : 16),
                       decoration: BoxDecoration(
-                        color: AppColors.whiteColor,
+                        color: AppColors.containerBackground,
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.04),
+                            color: AppColors.blackColor.withOpacity(0.04),
                             blurRadius: 10,
                             offset: const Offset(0, 2),
                           ),
@@ -244,7 +264,7 @@ class BrowseJobsScreen extends StatelessWidget {
                         children: [
                           Text(
                             'FRI, 30 OCT · 10:00 AM',
-                            style: TextStyle(
+                            style: textTheme.headlineSmall?.copyWith(
                               fontSize: isTablet ? 13 : 11,
                               color: AppColors.secondaryColor,
                               fontWeight: FontWeight.w500,
@@ -253,7 +273,7 @@ class BrowseJobsScreen extends StatelessWidget {
                           const SizedBox(height: 6),
                           Text(
                             'Standard Home Cleaning',
-                            style: TextStyle(
+                            style: textTheme.bodyMedium?.copyWith(
                               fontWeight: FontWeight.bold,
                               fontSize: isTablet ? 18 : 15,
                               color: AppColors.blackColor,
@@ -262,13 +282,33 @@ class BrowseJobsScreen extends StatelessWidget {
                           const SizedBox(height: 6),
                           Row(
                             children: [
-                              Icon(Icons.location_on_outlined, size: isTablet ? 18 : 14, color: AppColors.primaryColor),
+                              Icon(
+                                Icons.location_on_outlined,
+                                size: isTablet ? 18 : 14,
+                                color: AppColors.primaryColor,
+                              ),
                               const SizedBox(width: 4),
-                              Text('Parramatta, NSW', style: TextStyle(fontSize: isTablet ? 14 : 12, color: AppColors.secondaryColor)),
+                              Text(
+                                'Parramatta, NSW',
+                                style: textTheme.titleSmall?.copyWith(
+                                  fontSize: isTablet ? 14 : 12,
+                                  color: AppColors.secondaryColor,
+                                ),
+                              ),
                               const SizedBox(width: 16),
-                              Icon(Icons.access_time, size: isTablet ? 18 : 14, color: AppColors.primaryColor),
+                              Icon(
+                                Icons.access_time,
+                                size: isTablet ? 18 : 14,
+                                color: AppColors.primaryColor,
+                              ),
                               const SizedBox(width: 4),
-                              Text('2 hours', style: TextStyle(fontSize: isTablet ? 14 : 12, color: AppColors.secondaryColor)),
+                              Text(
+                                '2 hours',
+                                style: textTheme.titleSmall?.copyWith(
+                                  fontSize: isTablet ? 14 : 12,
+                                  color: AppColors.secondaryColor,
+                                ),
+                              ),
                             ],
                           ),
                           const Divider(height: 24),
@@ -280,16 +320,26 @@ class BrowseJobsScreen extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Expected Earnings',
-                                    style: TextStyle(fontSize: isTablet ? 13 : 11, color: AppColors.secondaryColor),
+                                    style: textTheme.titleSmall?.copyWith(
+                                      fontSize: isTablet ? 13 : 11,
+                                      color: AppColors.secondaryColor,
+                                    ),
                                   ),
                                   const SizedBox(height: 2),
                                   Text(
                                     '\$81.00',
-                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: isTablet ? 20 : 16, color: AppColors.blackColor),
+                                    style: textTheme.headlineLarge?.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: isTablet ? 20 : 16,
+                                      color: AppColors.blackColor,
+                                    ),
                                   ),
                                   Text(
                                     'After 10% commission',
-                                    style: TextStyle(fontSize: isTablet ? 12 : 10, color: AppColors.secondaryColor),
+                                    style: textTheme.titleSmall?.copyWith(
+                                      fontSize: isTablet ? 12 : 10,
+                                      color: AppColors.secondaryColor,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -298,15 +348,18 @@ class BrowseJobsScreen extends StatelessWidget {
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: AppColors.primaryColor,
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    context.push(Routes.homeJobDetailScreen);
+                                  },
                                   child: Text(
                                     'View Details',
-                                    style: TextStyle(
-                                      color: Colors.white,
+                                    style: textTheme.labelLarge?.copyWith(
+                                      color: AppColors.whiteColor,
                                       fontSize: isTablet ? 14 : 12,
-                                      fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                 ),
@@ -327,8 +380,10 @@ class BrowseJobsScreen extends StatelessWidget {
     );
   }
 
-  // Filter Chip Widget using controller state
-  Widget _buildFilterChip(String label, int index, bool isTablet) {
+   /// ---------- Extra Widget -------------- ///
+
+  // Filter chip
+  Widget _buildFilterChip(BuildContext context, String label, int index, bool isTablet) {
     bool isSelected = controller.selectedIndex.value == index;
 
     return GestureDetector(
@@ -341,13 +396,13 @@ class BrowseJobsScreen extends StatelessWidget {
           vertical: isTablet ? 12 : 10,
         ),
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.primaryColor : AppColors.containerBackground,
+          color: isSelected ? AppColors.primaryColor : AppColors.unselectedFilterColor,
           borderRadius: BorderRadius.circular(30),
         ),
         child: Text(
           label,
-          style: TextStyle(
-            color: isSelected ? Colors.white : AppColors.primaryColor,
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            color: AppColors.whiteColor ,
             fontSize: isTablet ? 14 : 12,
             fontWeight: FontWeight.w600,
           ),
