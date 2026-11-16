@@ -3,11 +3,11 @@ import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/IconString.dart';
 import 'package:cleaning_app/Resources/ImageString.dart';
 import 'package:cleaning_app/Resources/Routes.dart';
+import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
-
 
 
 class HomeScreen extends StatefulWidget {
@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Good Morning',
+                                    TextString.goodMorning,
                                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                                       color: AppColors.whiteColor,
                                       fontSize: isTablet ? 15 : 13,
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
-                                        'Awais Ali',
+                                        TextString.userName,
                                         style: Theme.of(context).textTheme.titleLarge?.copyWith(
                                           color: AppColors.whiteColor,
                                           fontWeight: FontWeight.bold,
@@ -153,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               const SizedBox(width: 6),
                               Text(
-                                'Verified Cleaner',
+                                TextString.verifiedCleaner,
                                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                   color: AppColors.smallNumberGreener,
                                   fontWeight: FontWeight.w500,
@@ -186,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Your availability',
+                              TextString.yourAvailability,
                               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                 color: AppColors.secondaryColor,
                                 fontSize: isTablet ? 14 : 12,
@@ -194,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             const SizedBox(height: 6),
                             Text(
-                              controller.isOnline.value ? "You're Online!" : "You're Offline",
+                              controller.isOnline.value ? TextString.youAreOnline : TextString.youAreOffline,
                               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                 color: controller.isOnline.value ? AppColors.mainGreenColor : AppColors.redColor,
                                 fontWeight: FontWeight.bold,
@@ -204,8 +204,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             const SizedBox(height: 6),
                             Text(
                               controller.isOnline.value
-                                  ? "You're now available for matching cleaning jobs."
-                                  : "Go online when you're ready to find work.",
+                                  ? TextString.onlineSubtitle
+                                  : TextString.offlineSubtitle,
                               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                 color: AppColors.secondaryColor,
                                 fontSize: isTablet ? 14 : 12,
@@ -229,7 +229,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 alignment: Alignment.center,
                                 child: Text(
-                                  controller.isOnline.value ? 'Browse Available Jobs' : 'Go Online',
+                                  controller.isOnline.value ? TextString.browseAvailableJobs : TextString.goOnline,
                                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                     fontSize: isTablet ? 18 : 16,
                                     fontWeight: FontWeight.w600,
@@ -254,14 +254,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Your Overview',
+                            TextString.yourOverview,
                             style: Theme.of(context).textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.bold,
                               fontSize: isTablet ? 18 : 16,
                             ),
                           ),
                           Text(
-                            'This Month',
+                            TextString.thisMonth,
                             style: Theme.of(context).textTheme.bodySmall?.copyWith(
                               color: AppColors.primaryColor,
                               fontWeight: FontWeight.w600,
@@ -278,9 +278,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               context,
                               icon: Icons.check_circle_outline,
                               iconColor: AppColors.primaryColor,
-                              title: 'Jobs Completed',
+                              title: TextString.jobsCompleted,
                               value: '24',
-                              subtitle: 'This month',
+                              subtitle: TextString.subtitleThisMonth,
                               isTablet: isTablet,
                             ),
                           ),
@@ -290,9 +290,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               context,
                               icon: Icons.account_balance_wallet_outlined,
                               iconColor: AppColors.mainGreenColor,
-                              title: 'Net Earnings',
+                              title: TextString.netEarnings,
                               value: '\$1,240',
-                              subtitle: 'After 10% commission',
+                              subtitle: TextString.afterCommission,
                               isTablet: isTablet,
                             ),
                           ),
@@ -306,9 +306,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               context,
                               icon: Icons.access_time,
                               iconColor: AppColors.yellowColor,
-                              title: 'Hours Worked',
+                              title: TextString.hoursWorked,
                               value: '86h',
-                              subtitle: 'Total working hours',
+                              subtitle: TextString.totalWorkingHours,
                               isTablet: isTablet,
                             ),
                           ),
@@ -318,9 +318,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               context,
                               icon: Icons.star_border,
                               iconColor: AppColors.purpleColor,
-                              title: 'Rating',
+                              title: TextString.rating,
                               value: '4.8',
-                              subtitle: 'Based on 18 reviews',
+                              subtitle: TextString.basedOnReviews,
                               isTablet: isTablet,
                             ),
                           ),
@@ -337,7 +337,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Recently Completed',
+                        TextString.recentlyCompleted,
                         style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                           fontSize: isTablet ? 20 : 16,
                           fontWeight: FontWeight.bold,
@@ -350,7 +350,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         decoration: BoxDecoration(
                           color: AppColors.containerBackground,
                           borderRadius: BorderRadius.circular(16),
-
                           border: Border.all(
                             color: AppColors.whiteColor.withOpacity(0.15),
                             width: 1.2,
@@ -370,7 +369,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'FRI, 30 OCT · 10:00 AM',
+                                  TextString.sampleDate,
                                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                                     fontSize: isTablet ? 13 : 11,
                                     color: AppColors.secondaryColor,
@@ -384,7 +383,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Text(
-                                    'Completed',
+                                    TextString.completedStatus,
                                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                                       fontWeight: FontWeight.normal,
                                       fontSize: isTablet ? 16 : 13,
@@ -396,7 +395,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              'Standard Home Cleaning',
+                              TextString.standardHomeCleaning,
                               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 fontSize: isTablet ? 18 : 15,
@@ -409,7 +408,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Icon(Icons.location_on_outlined, size: isTablet ? 18 : 14, color: AppColors.primaryColor),
                                 const SizedBox(width: 4),
                                 Text(
-                                  'Parramatta, NSW',
+                                  TextString.locationParramatta,
                                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                     fontSize: isTablet ? 14 : 12,
                                     color: AppColors.secondaryColor,
@@ -419,7 +418,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Icon(Icons.access_time, size: isTablet ? 18 : 14, color: AppColors.primaryColor),
                                 const SizedBox(width: 4),
                                 Text(
-                                  '2 hours',
+                                  TextString.durationHours,
                                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                     fontSize: isTablet ? 14 : 12,
                                     color: AppColors.secondaryColor,
@@ -435,7 +434,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Expected Earnings',
+                                      TextString.expectedEarnings,
                                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                         fontSize: isTablet ? 13 : 11,
                                         color: AppColors.secondaryColor,
@@ -443,7 +442,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     const SizedBox(height: 2),
                                     Text(
-                                      '\$81.00',
+                                      TextString.sampleEarningsValue,
                                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                                         fontWeight: FontWeight.bold,
                                         fontSize: isTablet ? 20 : 16,
@@ -451,7 +450,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                     ),
                                     Text(
-                                      'After 10% commission',
+                                      TextString.afterCommission,
                                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                         fontSize: isTablet ? 12 : 10,
                                         color: AppColors.secondaryColor,
@@ -470,7 +469,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       context.push(Routes.homeJobDetailScreen);
                                     },
                                     child: Text(
-                                      'View Booking',
+                                      TextString.viewBooking,
                                       style: Theme.of(context).textTheme.labelLarge?.copyWith(
                                         color: AppColors.whiteColor,
                                         fontSize: isTablet ? 14 : 12,
@@ -495,9 +494,9 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-   /// -------------- Extra Widget ----------------- ///
+  /// -------------- Extra Widget ----------------- ///
 
-   // OverView Card
+  // overview Card
   Widget _buildOverviewCard(
       BuildContext context, {
         required IconData icon,

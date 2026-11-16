@@ -3,6 +3,7 @@ import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/IconString.dart' show IconString;
 import 'package:cleaning_app/Resources/ImageString.dart';
 import 'package:cleaning_app/Resources/Routes.dart';
+import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -74,7 +75,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Job Detail',
+                                    TextString.jobDetailTitle,
                                     style: textTheme.headlineLarge?.copyWith(
                                       color: AppColors.whiteColor,
                                       fontSize: isTablet ? 20 : 16,
@@ -83,7 +84,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                                   ),
                                   const SizedBox(height: 2),
                                   Text(
-                                    'Review job details before accepting.',
+                                    TextString.jobDetailSubtitle,
                                     style: textTheme.titleSmall?.copyWith(
                                       color: AppColors.whiteColor.withOpacity(0.7),
                                       fontSize: isTablet ? 14 : 11,
@@ -172,7 +173,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Text(
-                                'Available Job',
+                                TextString.availableJobBadge,
                                 style: textTheme.titleSmall?.copyWith(
                                   color: AppColors.primaryColor,
                                   fontSize: isTablet ? 13 : 11,
@@ -181,7 +182,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                               ),
                             ),
                             Text(
-                              'Job #JB-1048',
+                              TextString.jobIdText,
                               style: textTheme.titleSmall?.copyWith(
                                 color: AppColors.secondaryColor,
                                 fontSize: isTablet ? 13 : 11,
@@ -191,7 +192,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                         ),
                         const SizedBox(height: 10),
                         Text(
-                          'Standard Home Cleaning',
+                          TextString.jobTitleStandard,
                           style: textTheme.bodyMedium?.copyWith(
                             fontWeight: FontWeight.bold,
                             fontSize: isTablet ? 20 : 16,
@@ -208,7 +209,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                             ),
                             const SizedBox(width: 4),
                             Text(
-                              'Parramatta, NSW',
+                              TextString.locationParramatta,
                               style: textTheme.titleSmall?.copyWith(
                                 fontSize: isTablet ? 14 : 12,
                                 color: AppColors.secondaryColor,
@@ -222,8 +223,8 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                             Expanded(
                               child: _buildInfoItem(
                                 context,
-                                title: 'Date',
-                                value: 'Tomorrow',
+                                title: TextString.labelDate,
+                                value: TextString.valueTomorrow,
                                 isTablet: isTablet,
                                 iconPath: IconString.bookingScreenIcon,
                               ),
@@ -232,8 +233,8 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                               child: _buildInfoItem(
                                 context,
                                 iconPath: IconString.startTime,
-                                title: 'Start time',
-                                value: '10:00 AM',
+                                title: TextString.labelStartTime,
+                                value: TextString.valueStartTime,
                                 isTablet: isTablet,
                               ),
                             ),
@@ -246,8 +247,8 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                               child: _buildInfoItem(
                                 context,
                                 iconPath: IconString.homeScreenIcon,
-                                title: 'Property',
-                                value: '2-bedroom home',
+                                title: TextString.labelProperty,
+                                value: TextString.valueProperty,
                                 isTablet: isTablet,
                               ),
                             ),
@@ -255,8 +256,8 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                               child: _buildInfoItem(
                                 context,
                                 iconPath: IconString.durationIcon,
-                                title: 'Duration',
-                                value: 'Approx. 2 hours',
+                                title: TextString.labelDuration,
+                                value: TextString.valueDuration,
                                 isTablet: isTablet,
                               ),
                             ),
@@ -289,7 +290,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Cleaning Requirements',
+                          TextString.cleaningRequirementsTitle,
                           style: textTheme.headlineLarge?.copyWith(
                             fontWeight: FontWeight.bold,
                             fontSize: isTablet ? 18 : 15,
@@ -297,13 +298,13 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                           ),
                         ),
                         const SizedBox(height: 12),
-                        _buildRequirementRow(context, 'Kitchen and benchtops', isTablet),
+                        _buildRequirementRow(context, TextString.reqKitchen, isTablet),
                         const SizedBox(height: 8),
-                        _buildRequirementRow(context, 'Bathroom and toilet', isTablet),
+                        _buildRequirementRow(context, TextString.reqBathroom, isTablet),
                         const SizedBox(height: 8),
-                        _buildRequirementRow(context, 'Vacuum and mop floors', isTablet),
+                        _buildRequirementRow(context, TextString.reqVacuum, isTablet),
                         const SizedBox(height: 8),
-                        _buildRequirementRow(context, 'Dust accessible surfaces', isTablet),
+                        _buildRequirementRow(context, TextString.reqDust, isTablet),
                       ],
                     ),
                   ),
@@ -330,7 +331,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Your Earning',
+                          TextString.yourEarningTitle,
                           style: textTheme.headlineLarge?.copyWith(
                             fontWeight: FontWeight.bold,
                             fontSize: isTablet ? 18 : 15,
@@ -342,14 +343,14 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Offered job price',
+                              TextString.offeredJobPriceLabel,
                               style: textTheme.titleSmall?.copyWith(
                                 fontSize: isTablet ? 14 : 12,
                                 color: AppColors.secondaryColor,
                               ),
                             ),
                             Text(
-                              '\$90.00',
+                              TextString.offeredJobPriceValue,
                               style: textTheme.titleSmall?.copyWith(
                                 fontSize: isTablet ? 14 : 12,
                                 fontWeight: FontWeight.w600,
@@ -363,16 +364,16 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Platform commission (10%)',
+                              TextString.platformCommissionLabel,
                               style: textTheme.titleSmall?.copyWith(
                                 fontSize: isTablet ? 14 : 12,
                                 color: AppColors.secondaryColor,
                               ),
                             ),
                             Text(
-                              '-\$9.00',
+                              TextString.platformCommissionValue,
                               style: textTheme.titleSmall?.copyWith(
-                                fontSize:  isTablet ? 12:12,
+                                fontSize: isTablet ? 12 : 12,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.redColor,
                               ),
@@ -387,7 +388,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Expected Earnings',
+                                  TextString.expectedEarningsTitle,
                                   style: textTheme.bodyMedium?.copyWith(
                                     fontWeight: FontWeight.bold,
                                     fontSize: isTablet ? 16 : 14,
@@ -395,7 +396,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                                   ),
                                 ),
                                 Text(
-                                  'After 10% commission',
+                                  TextString.afterCommissionSubtitle,
                                   style: textTheme.titleSmall?.copyWith(
                                     fontSize: isTablet ? 12 : 10,
                                     color: AppColors.secondaryColor,
@@ -404,7 +405,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                               ],
                             ),
                             Text(
-                              '\$81.00',
+                              TextString.expectedEarningsValue,
                               style: textTheme.headlineLarge?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 fontSize: isTablet ? 22 : 18,
@@ -423,7 +424,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: isTablet ? 32 : 20),
                   child: HomeButton(
-                    text: 'Chat with customer',
+                    text: TextString.chatWithCustomerButton,
                     onPressed: () {
                       context.push(Routes.homeChatScreen);
                     },
@@ -442,7 +443,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                     children: [
                       Expanded(
                         child: HomeButton(
-                          text: 'Accept job',
+                          text: TextString.acceptJobButton,
                           onPressed: () {
                             showAcceptJobDialog(context, isTablet: isTablet);
                           },
@@ -453,7 +454,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                       const SizedBox(width: 12),
                       Expanded(
                         child: HomeButton(
-                          text: 'Decline job',
+                          text: TextString.declineJobButton,
                           onPressed: () {},
                           isTablet: isTablet,
                           backgroundColor: AppColors.redColor,
@@ -472,9 +473,9 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
     );
   }
 
-   /// --------------- Extra Widget -------------------- ///
+  /// --------------- Extra Widget -------------------- ///
 
-   // Info Item
+  // Info Item
   Widget _buildInfoItem(
       BuildContext context, {
         required String iconPath,
@@ -544,8 +545,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
   }
 }
 
- /// Dialog
-// Accept Dialog
+/// Dialogs Section
 void showAcceptJobDialog(BuildContext context, {required bool isTablet}) {
   showDialog(
     context: context,
@@ -572,7 +572,7 @@ void showAcceptJobDialog(BuildContext context, {required bool isTablet}) {
               ),
               const SizedBox(height: 20),
               Text(
-                'Accept This Job?',
+                TextString.acceptDialogTitle,
                 style: textTheme.headlineLarge?.copyWith(
                   fontSize: isTablet ? 22 : 18,
                   fontWeight: FontWeight.bold,
@@ -582,7 +582,7 @@ void showAcceptJobDialog(BuildContext context, {required bool isTablet}) {
               ),
               const SizedBox(height: 8),
               Text(
-                'Are you sure you want to accept this cleaning job?',
+                TextString.acceptDialogSubtitle,
                 style: textTheme.titleSmall?.copyWith(
                   fontSize: isTablet ? 14 : 12,
                   color: AppColors.secondaryColor,
@@ -594,7 +594,7 @@ void showAcceptJobDialog(BuildContext context, {required bool isTablet}) {
                 children: [
                   Expanded(
                     child: HomeButton(
-                      text: 'Accept Job',
+                      text: TextString.dialogAcceptBtn,
                       onPressed: () {
                         Navigator.pop(context);
                         showJobAcceptedSuccessDialog(context, isTablet: isTablet);
@@ -606,7 +606,7 @@ void showAcceptJobDialog(BuildContext context, {required bool isTablet}) {
                   const SizedBox(width: 12),
                   Expanded(
                     child: HomeButton(
-                      text: 'Cancel',
+                      text: TextString.dialogCancelBtn,
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -624,7 +624,6 @@ void showAcceptJobDialog(BuildContext context, {required bool isTablet}) {
   );
 }
 
- // Accepted Dialog
 void showJobAcceptedSuccessDialog(
     BuildContext context, {
       required bool isTablet,
@@ -635,7 +634,7 @@ void showJobAcceptedSuccessDialog(
     context: context,
     barrierDismissible: false,
     builder: (BuildContext dialogContext) {
-      final textTheme = Theme.of(dialogContext).textTheme;
+      final textTheme = dialogContext.textTheme;
 
       return Dialog(
         shape: RoundedRectangleBorder(
@@ -657,8 +656,8 @@ void showJobAcceptedSuccessDialog(
               ),
               const SizedBox(height: 20),
               Text(
-                'Job Accepted\nSuccessfully',
-                style: textTheme.headlineLarge?.copyWith(
+                TextString.successDialogTitle,
+                style: dialogContext.textTheme.headlineLarge?.copyWith(
                   fontSize: isTablet ? 22 : 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.blackColor,
@@ -668,8 +667,8 @@ void showJobAcceptedSuccessDialog(
               ),
               const SizedBox(height: 10),
               Text(
-                'Congratulation! You have accepted\nthe job# JB-1048 successfully.',
-                style: textTheme.titleSmall?.copyWith(
+                TextString.successDialogSubtitle,
+                style: dialogContext.textTheme.titleSmall?.copyWith(
                   fontSize: isTablet ? 14 : 12,
                   color: AppColors.secondaryColor,
                   height: 1.3,
@@ -678,10 +677,9 @@ void showJobAcceptedSuccessDialog(
               ),
               const SizedBox(height: 24),
               HomeButton(
-                text: 'Back to Dashboard',
+                text: TextString.backToDashboardBtn,
                 onPressed: () {
                   Navigator.of(dialogContext).pop();
-
                   router.go(Routes.homeScreen);
                 },
                 isTablet: isTablet,
@@ -732,7 +730,7 @@ class HomeButton extends StatelessWidget {
           elevation: 0,
         ),
         onPressed: onPressed,
-        child:Text(
+        child: Text(
           text,
           style: textTheme.labelLarge?.copyWith(
             fontSize: isTablet ? 16 : 14,
@@ -745,6 +743,6 @@ class HomeButton extends StatelessWidget {
           ),
         ),
       ),
-        );
+    );
   }
 }

@@ -2,6 +2,7 @@ import 'package:cleaning_app/HomeScreen/HomeController.dart';
 import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/IconString.dart' show IconString;
 import 'package:cleaning_app/Resources/ImageString.dart';
+import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -70,7 +71,7 @@ class _HomeChatScreenState extends State<HomeChatScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Chat with Customer',
+                                  TextString.chatWithCustomerTitle,
                                   style: textTheme.headlineLarge?.copyWith(
                                     color: AppColors.whiteColor,
                                     fontSize: isTablet ? 20 : 16,
@@ -79,7 +80,7 @@ class _HomeChatScreenState extends State<HomeChatScreen> {
                                 ),
                                 const SizedBox(height: 2),
                                 Text(
-                                  'Discuss job details with the customer.',
+                                  TextString.chatWithCustomerSubtitle,
                                   style: textTheme.titleSmall?.copyWith(
                                     color: AppColors.whiteColor.withOpacity(0.7),
                                     fontSize: isTablet ? 14 : 11,
@@ -162,14 +163,14 @@ class _HomeChatScreenState extends State<HomeChatScreen> {
                         children: [
                           CircleAvatar(
                             radius: isTablet ? 28 : 22,
-                            backgroundImage:  AssetImage(ImageString.avatarIcon),
+                            backgroundImage: AssetImage(ImageString.avatarIcon),
                           ),
                           const SizedBox(width: 12),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Jack Milson',
+                                TextString.customerName,
                                 style: textTheme.bodyMedium?.copyWith(
                                   fontWeight: FontWeight.bold,
                                   fontSize: isTablet ? 18 : 15,
@@ -178,7 +179,7 @@ class _HomeChatScreenState extends State<HomeChatScreen> {
                               ),
                               const SizedBox(height: 2),
                               Text(
-                                'Online',
+                                TextString.customerOnlineStatus,
                                 style: textTheme.titleSmall?.copyWith(
                                   color: AppColors.mainGreenColor,
                                   fontSize: isTablet ? 14 : 12,
@@ -209,7 +210,7 @@ class _HomeChatScreenState extends State<HomeChatScreen> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
-                    'Today',
+                    TextString.dateTodayLabel,
                     style: textTheme.titleSmall?.copyWith(
                       color: AppColors.primaryColor,
                       fontSize: 12,
@@ -238,7 +239,7 @@ class _HomeChatScreenState extends State<HomeChatScreen> {
                             maxWidth: screenWidth * 0.75,
                           ),
                           decoration: BoxDecoration(
-                            color: isMe ? AppColors.whiteColor: AppColors.chatOppositeColor,
+                            color: isMe ? AppColors.whiteColor : AppColors.chatOppositeColor,
                             border: Border.all(
                               color: AppColors.primaryColor.withOpacity(0.2),
                               width: 1,
@@ -304,7 +305,7 @@ class _HomeChatScreenState extends State<HomeChatScreen> {
                         cursorColor: AppColors.primaryColor,
                         controller: controller.messageController,
                         decoration: InputDecoration(
-                          hintText: 'Type Message',
+                          hintText: TextString.typeMessageHint,
                           hintStyle: textTheme.titleSmall?.copyWith(
                             color: AppColors.secondaryColor,
                             fontSize: isTablet ? 14 : 12,

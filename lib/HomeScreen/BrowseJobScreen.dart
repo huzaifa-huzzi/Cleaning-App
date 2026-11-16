@@ -3,6 +3,7 @@ import 'package:cleaning_app/Resources/Colors.dart';
 import 'package:cleaning_app/Resources/IconString.dart';
 import 'package:cleaning_app/Resources/ImageString.dart' show ImageString;
 import 'package:cleaning_app/Resources/Routes.dart';
+import 'package:cleaning_app/Resources/TextString.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -75,7 +76,7 @@ class BrowseJobsScreen extends StatelessWidget {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Available Jobs',
+                                        TextString.availableJobsTitle,
                                         style: textTheme.headlineLarge?.copyWith(
                                           color: AppColors.whiteColor,
                                           fontSize: isTablet ? 20 : 16,
@@ -84,7 +85,7 @@ class BrowseJobsScreen extends StatelessWidget {
                                       ),
                                       const SizedBox(height: 2),
                                       Text(
-                                        'Find your next cleaning job',
+                                        TextString.findNextCleaningJob,
                                         style: textTheme.titleSmall?.copyWith(
                                           color: AppColors.whiteColor.withOpacity(0.7),
                                           fontSize: isTablet ? 14 : 11,
@@ -165,7 +166,7 @@ class BrowseJobsScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Your availability',
+                              TextString.yourAvailability,
                               style: textTheme.titleSmall?.copyWith(
                                 color: AppColors.secondaryColor,
                                 fontSize: isTablet ? 14 : 12,
@@ -173,7 +174,7 @@ class BrowseJobsScreen extends StatelessWidget {
                             ),
                             const SizedBox(height: 6),
                             Text(
-                              "You're Online!",
+                              TextString.youAreOnline,
                               style: textTheme.headlineLarge?.copyWith(
                                 color: AppColors.mainGreenColor,
                                 fontWeight: FontWeight.bold,
@@ -182,7 +183,7 @@ class BrowseJobsScreen extends StatelessWidget {
                             ),
                             const SizedBox(height: 6),
                             Text(
-                              'New matching jobs can appear here.',
+                              TextString.newJobsAppearHere,
                               style: textTheme.titleSmall?.copyWith(
                                 color: AppColors.secondaryColor,
                                 fontSize: isTablet ? 14 : 12,
@@ -201,11 +202,11 @@ class BrowseJobsScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: isTablet ? 32 : 20),
                   child: Obx(() => Row(
                     children: [
-                      _buildFilterChip(context, 'All Jobs', 0, isTablet),
+                      _buildFilterChip(context, TextString.filterAllJobs, 0, isTablet),
                       const SizedBox(width: 10),
-                      _buildFilterChip(context, 'Home Cleaning', 1, isTablet),
+                      _buildFilterChip(context, TextString.filterHomeCleaning, 1, isTablet),
                       const SizedBox(width: 10),
-                      _buildFilterChip(context, 'Deep cleaning', 2, isTablet),
+                      _buildFilterChip(context, TextString.filterDeepCleaning, 2, isTablet),
                     ],
                   )),
                 ),
@@ -217,7 +218,7 @@ class BrowseJobsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Jobs near your service area',
+                        TextString.jobsNearServiceArea,
                         style: textTheme.headlineLarge?.copyWith(
                           fontWeight: FontWeight.bold,
                           fontSize: isTablet ? 18 : 16,
@@ -225,7 +226,7 @@ class BrowseJobsScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '3 Jobs',
+                        TextString.jobsCountText,
                         style: textTheme.headlineSmall?.copyWith(
                           color: AppColors.primaryColor,
                           fontWeight: FontWeight.w600,
@@ -263,7 +264,7 @@ class BrowseJobsScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'FRI, 30 OCT · 10:00 AM',
+                            TextString.sampleDate,
                             style: textTheme.headlineSmall?.copyWith(
                               fontSize: isTablet ? 13 : 11,
                               color: AppColors.secondaryColor,
@@ -272,7 +273,7 @@ class BrowseJobsScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 6),
                           Text(
-                            'Standard Home Cleaning',
+                            TextString.standardHomeCleaning,
                             style: textTheme.bodyMedium?.copyWith(
                               fontWeight: FontWeight.bold,
                               fontSize: isTablet ? 18 : 15,
@@ -289,7 +290,7 @@ class BrowseJobsScreen extends StatelessWidget {
                               ),
                               const SizedBox(width: 4),
                               Text(
-                                'Parramatta, NSW',
+                                TextString.locationParramatta,
                                 style: textTheme.titleSmall?.copyWith(
                                   fontSize: isTablet ? 14 : 12,
                                   color: AppColors.secondaryColor,
@@ -303,7 +304,7 @@ class BrowseJobsScreen extends StatelessWidget {
                               ),
                               const SizedBox(width: 4),
                               Text(
-                                '2 hours',
+                                TextString.durationHours,
                                 style: textTheme.titleSmall?.copyWith(
                                   fontSize: isTablet ? 14 : 12,
                                   color: AppColors.secondaryColor,
@@ -319,7 +320,7 @@ class BrowseJobsScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Expected Earnings',
+                                    TextString.expectedEarnings,
                                     style: textTheme.titleSmall?.copyWith(
                                       fontSize: isTablet ? 13 : 11,
                                       color: AppColors.secondaryColor,
@@ -327,7 +328,7 @@ class BrowseJobsScreen extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 2),
                                   Text(
-                                    '\$81.00',
+                                    TextString.sampleEarningsValue,
                                     style: textTheme.headlineLarge?.copyWith(
                                       fontWeight: FontWeight.bold,
                                       fontSize: isTablet ? 20 : 16,
@@ -335,7 +336,7 @@ class BrowseJobsScreen extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    'After 10% commission',
+                                    TextString.afterCommissionSubtitle,
                                     style: textTheme.titleSmall?.copyWith(
                                       fontSize: isTablet ? 12 : 10,
                                       color: AppColors.secondaryColor,
@@ -356,7 +357,7 @@ class BrowseJobsScreen extends StatelessWidget {
                                     context.push(Routes.homeJobDetailScreen);
                                   },
                                   child: Text(
-                                    'View Details',
+                                    TextString.viewDetailsButton,
                                     style: textTheme.labelLarge?.copyWith(
                                       color: AppColors.whiteColor,
                                       fontSize: isTablet ? 14 : 12,
@@ -380,7 +381,7 @@ class BrowseJobsScreen extends StatelessWidget {
     );
   }
 
-   /// ---------- Extra Widget -------------- ///
+  /// ---------- Extra Widget -------------- ///
 
   // Filter chip
   Widget _buildFilterChip(BuildContext context, String label, int index, bool isTablet) {
@@ -402,7 +403,7 @@ class BrowseJobsScreen extends StatelessWidget {
         child: Text(
           label,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-            color: AppColors.whiteColor ,
+            color: AppColors.whiteColor,
             fontSize: isTablet ? 14 : 12,
             fontWeight: FontWeight.w600,
           ),
