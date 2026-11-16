@@ -32,6 +32,9 @@ class IconString {
   static const String  verifiedIcon = 'Assets/icons/VerifiedCleaner.svg';
   static const String  durationIcon = 'Assets/icons/DurationIcon.svg';
   static const String  startTime = 'Assets/icons/startTime.svg';
+  static const String  helpIcon = 'Assets/icons/Help.svg';
+  static const String  settingIcon = 'Assets/icons/Setting.svg';
+  static const String  tutorialIcon = 'Assets/icons/Tutorial.svg';
 
 
 

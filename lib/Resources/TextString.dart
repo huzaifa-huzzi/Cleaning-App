@@ -290,5 +290,19 @@ class TextString {
   static const String jobsNearServiceArea = 'Jobs near your service area';
   static const String jobsCountText = '3 Jobs';
   static const String viewDetailsButton = 'View Details';
+   /// Sidebar
+  static const String backButton = 'Back';
+  static const String menuCategory = 'Main Menu';
+  static const String menuHome = 'Home';
+  static const String menuBookings = 'Bookings';
+  static const String menuEarning = 'Earning';
+  static const String accountCategory = 'Account';
+  static const String menuMyProfile = 'My Profile';
+  static const String menuVerification = 'Verification';
+  static const String menuTutorial = 'Tutorial & Guidelines';
+  static const String menuSettings = 'Settings';
+  static const String menuHelpSupport = 'Help & Support';
+  static const String menuLogout = 'Logout';
+  static const String email = 'awais@gmail.com';
 
 }

@@ -52,7 +52,7 @@ class _DashboardMainScreenState extends State<DashboardMainScreen> {
         ),
         padding: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
-          color: AppColors.whiteColor,
+          color: AppColors.navbarColor,
           borderRadius: BorderRadius.circular(22.0),
           boxShadow: [
             BoxShadow(

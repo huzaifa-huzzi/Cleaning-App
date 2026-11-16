@@ -4,6 +4,7 @@ import 'package:cleaning_app/Resources/IconString.dart';
 import 'package:cleaning_app/Resources/ImageString.dart' show ImageString;
 import 'package:cleaning_app/Resources/Routes.dart';
 import 'package:cleaning_app/Resources/TextString.dart';
+import 'package:cleaning_app/Sidebar/Sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -21,6 +22,7 @@ class BrowseJobsScreen extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
+      endDrawer: const Sidebar(),
       backgroundColor: AppColors.backgroundOfScreenColor,
       body: SingleChildScrollView(
         child: Center(
@@ -37,7 +39,6 @@ class BrowseJobsScreen extends StatelessWidget {
                       width: double.infinity,
                       height: isTablet ? 310 : 270,
                     ),
-                    // Header Background Container
                     Container(
                       width: double.infinity,
                       height: isTablet ? 260 : 220,
@@ -125,17 +126,23 @@ class BrowseJobsScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  IconButton(
-                                    icon: SvgPicture.asset(
-                                      IconString.menuIcon,
-                                      width: isTablet ? 28 : 24,
-                                      height: isTablet ? 28 : 24,
-                                      colorFilter: const ColorFilter.mode(
-                                        AppColors.whiteColor,
-                                        BlendMode.srcIn,
-                                      ),
-                                    ),
-                                    onPressed: () {},
+                                  Builder(
+                                    builder: (BuildContext innerContext) {
+                                      return IconButton(
+                                        icon: SvgPicture.asset(
+                                          IconString.menuIcon,
+                                          width: isTablet ? 28 : 24,
+                                          height: isTablet ? 28 : 24,
+                                          colorFilter: const ColorFilter.mode(
+                                            AppColors.whiteColor,
+                                            BlendMode.srcIn,
+                                          ),
+                                        ),
+                                        onPressed: () {
+                                          Scaffold.of(innerContext).openEndDrawer();
+                                        },
+                                      );
+                                    },
                                   ),
                                 ],
                               ),
