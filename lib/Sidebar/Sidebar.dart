@@ -114,6 +114,7 @@ class _SidebarState extends State<Sidebar> {
                 title: TextString.menuBookings,
                 onTap: () {
                   Navigator.pop(context);
+                  context.go(Routes.bookingScreen);
                 },
               ),
               _buildSidebarItem(

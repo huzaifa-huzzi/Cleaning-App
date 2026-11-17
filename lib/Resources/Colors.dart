@@ -18,4 +18,6 @@ class AppColors {
   static const Color purpleColor= Color( 0xFF943DFF);
   static const Color unselectedFilterColor= Color( 0xFFB3CFF9);
   static const Color chatOppositeColor= Color( 0xFFE3EDFF);
+  static const Color completeBAckground= Color( 0xFFE3F2EB);
+  static const Color bookedBackground= Color( 0xFFEAF1FF);
 }

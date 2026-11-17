@@ -79,7 +79,7 @@ class _DashboardMainScreenState extends State<DashboardMainScreen> {
               currentIndex: currentIndex,
               iconPath: IconString.bookingScreenIcon,
               title: TextString.navBookings,
-              route:'/booking'
+              route:Routes.bookingScreen,
             ),
             _buildNavItem(
               context,

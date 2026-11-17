@@ -305,4 +305,29 @@ class TextString {
   static const String menuLogout = 'Logout';
   static const String email = 'awais@gmail.com';
 
+   /// Booking
+  static const String myBookingsTitle = 'My Bookings';
+  static const String myBookingsSubtitle = 'View and manage your cleaning jobs.';
+  static const String tabBooked = 'Booked';
+  static const String tabCompleted = 'Completed 8';
+  static const String tabCancelled = 'Cancelled 2';
+  static const String activeBadge = 'Active';
+  static const String viewBookingButton = 'View Booking';
+  static const String searchBookingHint = 'Search by booking name';
+  static const String completedBadge = 'Completed';
+  static const String cancelledBadge = 'Cancelled';
+  static const String selectDateTitle = 'Select date';
+  static const String dialogCancel = 'Cancel';
+  static const String dialogOk = 'OK';
+  static const String bookingShowingTitle = 'My Bookings';
+  static const String bookingShowingSubtitle = 'View and manage your cleaning jobs.';
+  static const String customerDetailTitle = 'Customer Detail';
+  static const String customerNotesLabel = 'Customer Notes';
+  static const String customerNotesText = 'Please focus on the kitchen and bathroom.';
+  static const String ratingExperienceTitle = 'How was your experience with this customer?';
+  static const String submitRatingButton = 'Submit Rating';
+  static const String markReadyButton = 'Mark Ready for Payment';
+  static const String bookedStatusBadge = 'Booked';
+  static const String completedStatusBadge = 'Completed';
+
 }
