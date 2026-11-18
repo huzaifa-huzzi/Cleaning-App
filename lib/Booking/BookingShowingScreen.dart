@@ -90,7 +90,7 @@ class BookingShowingScreen extends StatelessWidget {
                                   Text(
                                     TextString.bookingShowingSubtitle,
                                     style: textTheme.titleSmall?.copyWith(
-                                      color: AppColors.whiteColor.withOpacity(0.8),
+                                      color: AppColors.whiteColor.withValues(alpha: 0.8),
                                       fontSize: isTablet ? 14 : 12,
                                     ),
                                   ),
@@ -165,7 +165,7 @@ class BookingShowingScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.blackColor.withOpacity(0.05),
+                          color: AppColors.blackColor.withValues(alpha: 0.05),
                           blurRadius: 12,
                           offset: const Offset(0, 4),
                         ),
@@ -254,7 +254,7 @@ class BookingShowingScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.blackColor.withOpacity(0.05),
+                          color: AppColors.blackColor.withValues(alpha: 0.05),
                           blurRadius: 12,
                           offset: const Offset(0, 4),
                         ),
@@ -294,7 +294,7 @@ class BookingShowingScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.blackColor.withOpacity(0.05),
+                          color: AppColors.blackColor.withValues(alpha: 0.05),
                           blurRadius: 12,
                           offset: const Offset(0, 4),
                         ),
@@ -410,7 +410,7 @@ class BookingShowingScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.blackColor.withOpacity(0.05),
+                          color: AppColors.blackColor.withValues(alpha: 0.05),
                           blurRadius: 12,
                           offset: const Offset(0, 4),
                         ),
@@ -473,7 +473,7 @@ class BookingShowingScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.blackColor.withOpacity(0.05),
+                            color: AppColors.blackColor.withValues(alpha: 0.05),
                             blurRadius: 12,
                             offset: const Offset(0, 4),
                           ),

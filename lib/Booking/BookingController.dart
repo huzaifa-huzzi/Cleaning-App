@@ -76,7 +76,6 @@ class BookingController extends GetxController {
               surface: AppColors.containerBackground,
               onSurface: AppColors.blackColor,
             ),
-            dialogBackgroundColor: AppColors.containerBackground,
             textButtonTheme: TextButtonThemeData(
               style: TextButton.styleFrom(
                 foregroundColor: AppColors.primaryColor,
@@ -85,7 +84,7 @@ class BookingController extends GetxController {
                   fontSize: 14,
                 ),
               ),
-            ),
+            ), dialogTheme: DialogThemeData(backgroundColor: AppColors.containerBackground),
           ),
           child: child!,
         );

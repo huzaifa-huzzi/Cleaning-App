@@ -88,7 +88,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                                   Text(
                                     TextString.jobDetailSubtitle,
                                     style: textTheme.titleSmall?.copyWith(
-                                      color: AppColors.whiteColor.withOpacity(0.7),
+                                      color: AppColors.whiteColor.withValues(alpha: 0.7),
                                       fontSize: isTablet ? 14 : 11,
                                     ),
                                   ),
@@ -161,7 +161,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.blackColor.withOpacity(0.08),
+                          color: AppColors.blackColor.withValues(alpha: 0.08),
                           blurRadius: 15,
                           spreadRadius: 1,
                           offset: const Offset(0, 6),
@@ -177,7 +177,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                             Container(
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                               decoration: BoxDecoration(
-                                color: AppColors.primaryColor.withOpacity(0.1),
+                                color: AppColors.primaryColor.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Text(
@@ -287,7 +287,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.blackColor.withOpacity(0.08),
+                          color: AppColors.blackColor.withValues(alpha: 0.08),
                           blurRadius: 15,
                           spreadRadius: 1,
                           offset: const Offset(0, 6),
@@ -328,7 +328,7 @@ class _HomeJobDetailScreenState extends State<HomeJobDetailScreen> {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.blackColor.withOpacity(0.08),
+                          color: AppColors.blackColor.withValues(alpha: 0.08),
                           blurRadius: 15,
                           spreadRadius: 1,
                           offset: const Offset(0, 6),

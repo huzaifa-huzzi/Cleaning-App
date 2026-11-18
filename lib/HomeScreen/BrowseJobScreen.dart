@@ -88,7 +88,7 @@ class BrowseJobsScreen extends StatelessWidget {
                                       Text(
                                         TextString.findNextCleaningJob,
                                         style: textTheme.titleSmall?.copyWith(
-                                          color: AppColors.whiteColor.withOpacity(0.7),
+                                          color: AppColors.whiteColor.withValues(alpha: 0.7),
                                           fontSize: isTablet ? 14 : 11,
                                         ),
                                       ),
@@ -162,7 +162,7 @@ class BrowseJobsScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(16),
                           boxShadow: [
                             BoxShadow(
-                              color: AppColors.blackColor.withOpacity(0.03),
+                              color: AppColors.blackColor.withValues(alpha: 0.03),
                               blurRadius: 12,
                               spreadRadius: 0,
                               offset: const Offset(0, 4),
@@ -261,7 +261,7 @@ class BrowseJobsScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.blackColor.withOpacity(0.04),
+                            color: AppColors.blackColor.withValues(alpha: 0.04),
                             blurRadius: 10,
                             offset: const Offset(0, 2),
                           ),

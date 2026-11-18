@@ -83,7 +83,7 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
                               borderRadius: BorderRadius.circular(12),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.04),
+                                  color: Colors.black.withValues(alpha: 0.04),
                                   blurRadius: 4,
                                   offset: const Offset(0, 2),
                                 ),
@@ -111,7 +111,7 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
                               borderRadius: BorderRadius.circular(20),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.04),
+                                  color: Colors.black.withValues(alpha: 0.04),
                                   blurRadius: 4,
                                   offset: const Offset(0, 2),
                                 ),
@@ -154,7 +154,7 @@ class _SignupConfirmIdentityState extends State<SignupConfirmIdentity> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(20),
                         decoration: BoxDecoration(
-                          color: AppColors.fieldColors.withOpacity(0.5),
+                          color: AppColors.fieldColors.withValues(alpha: 0.5),
                           borderRadius: BorderRadius.circular(24),
                           border: Border.all(color: Colors.grey.shade200),
                         ),

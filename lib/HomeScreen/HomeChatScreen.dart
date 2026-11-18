@@ -84,7 +84,7 @@ class _HomeChatScreenState extends State<HomeChatScreen> {
                                 Text(
                                   TextString.chatWithCustomerSubtitle,
                                   style: textTheme.titleSmall?.copyWith(
-                                    color: AppColors.whiteColor.withOpacity(0.7),
+                                    color: AppColors.whiteColor.withValues(alpha: 0.7),
                                     fontSize: isTablet ? 14 : 11,
                                   ),
                                 ),
@@ -158,7 +158,7 @@ class _HomeChatScreenState extends State<HomeChatScreen> {
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.blackColor.withOpacity(0.06),
+                        color: AppColors.blackColor.withValues(alpha: 0.06),
                         blurRadius: 12,
                         offset: const Offset(0, 4),
                       ),
@@ -214,7 +214,7 @@ class _HomeChatScreenState extends State<HomeChatScreen> {
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
                   decoration: BoxDecoration(
-                    color: AppColors.primaryColor.withOpacity(0.08),
+                    color: AppColors.primaryColor.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
@@ -249,13 +249,13 @@ class _HomeChatScreenState extends State<HomeChatScreen> {
                           decoration: BoxDecoration(
                             color: isMe ? AppColors.whiteColor : AppColors.chatOppositeColor,
                             border: Border.all(
-                              color: AppColors.primaryColor.withOpacity(0.2),
+                              color: AppColors.primaryColor.withValues(alpha: 0.2),
                               width: 1,
                             ),
                             borderRadius: BorderRadius.circular(16),
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.blackColor.withOpacity(0.04),
+                                color: AppColors.blackColor.withValues(alpha: 0.04),
                                 blurRadius: 8,
                                 offset: const Offset(0, 2),
                               ),

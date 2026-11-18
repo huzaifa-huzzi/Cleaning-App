@@ -76,7 +76,7 @@ class _BookingScreenState extends State<BookingScreen> {
                               Text(
                                 TextString.myBookingsSubtitle,
                                 style: textTheme.titleSmall?.copyWith(
-                                  color: AppColors.whiteColor.withOpacity(0.8),
+                                  color: AppColors.whiteColor.withValues(alpha: 0.8),
                                   fontSize: isTablet ? 14 : 12,
                                 ),
                               ),
@@ -189,7 +189,7 @@ class _BookingScreenState extends State<BookingScreen> {
                                     color: AppColors.containerBackground,
                                     borderRadius: BorderRadius.circular(30),
                                     border: Border.all(
-                                      color: AppColors.primaryColor.withOpacity(0.3),
+                                      color: AppColors.primaryColor.withValues(alpha: 0.3),
                                       width: 1,
                                     ),
                                   ),
@@ -220,7 +220,7 @@ class _BookingScreenState extends State<BookingScreen> {
                                     borderRadius: BorderRadius.circular(14),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: AppColors.primaryColor.withOpacity(0.3),
+                                        color: AppColors.primaryColor.withValues(alpha: 0.3),
                                         blurRadius: 8,
                                         offset: const Offset(0, 3),
                                       ),
@@ -283,7 +283,7 @@ class _BookingScreenState extends State<BookingScreen> {
                             borderRadius: BorderRadius.circular(16),
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.blackColor.withOpacity(0.05),
+                                color: AppColors.blackColor.withValues(alpha: 0.05),
                                 blurRadius: 12,
                                 offset: const Offset(0, 4),
                               ),

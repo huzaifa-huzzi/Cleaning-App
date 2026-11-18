@@ -82,7 +82,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                                   Text(
                                     "View and manage your cleaning jobs.",
                                     style: textTheme.titleSmall?.copyWith(
-                                      color: AppColors.whiteColor.withOpacity(0.8),
+                                      color: AppColors.whiteColor.withValues(alpha: 0.8),
                                       fontSize: isTablet ? 14 : 12,
                                     ),
                                   ),
@@ -181,7 +181,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.blackColor.withOpacity(0.05),
+                          color: AppColors.blackColor.withValues(alpha: 0.05),
                           blurRadius: 12,
                           offset: const Offset(0, 4),
                         ),
@@ -355,7 +355,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                         Text(
                           "Only confirm if the customer has paid the full \$90. Your \$9 platform commission remains a separate obligation.",
                           style: textTheme.titleSmall?.copyWith(
-                            color: AppColors.whiteColor.withOpacity(0.85),
+                            color: AppColors.whiteColor.withValues(alpha: 0.85),
                             fontSize: isTablet ? 13 : 11,
                             height: 1.4,
                           ),
@@ -495,7 +495,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.blackColor.withOpacity(0.02),
+              color: AppColors.blackColor.withValues(alpha: 0.02),
               blurRadius: 6,
               offset: const Offset(0, 2),
             ),
