@@ -13,6 +13,7 @@ import 'package:cleaning_app/Authentication/Signup/SignupTutorial.dart';
 import 'package:cleaning_app/Authentication/Signup/SignupVerifyScreen.dart';
 import 'package:cleaning_app/Authentication/Signup/signupConfirmIdentity.dart';
 import 'package:cleaning_app/Authentication/VerifyNumber/VerifyNumber.dart';
+import 'package:cleaning_app/Booking/BookingPaymentConfirmation.dart';
 import 'package:cleaning_app/Booking/BookingScreen.dart';
 import 'package:cleaning_app/Booking/BookingShowingScreen.dart' show BookingShowingScreen;
 import 'package:cleaning_app/Dashboard/DashboardMainScreen.dart';
@@ -48,6 +49,7 @@ class Routes {
   static const String homeChatScreen = '/homeChatScreen';
   static const String bookingScreen = '/bookingScreen';
   static const String bookingShowingScreen = '/bookingShowingScreen';
+  static const String bookingPaymentConfirmation = '/bookingPaymentConfirmation';
 
 
   static final GoRouter router = GoRouter(
@@ -152,6 +154,10 @@ class Routes {
               final bool isCompleted = extra?['isCompleted'] ?? false;
               return BookingShowingScreen(isCompleted: isCompleted);
             },
+          ),
+          GoRoute(
+            path: bookingPaymentConfirmation,
+            builder: (context, state) =>  BookingPaymentConfirmation(),
           ),
         ],
       ),

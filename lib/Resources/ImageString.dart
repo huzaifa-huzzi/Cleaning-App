@@ -22,4 +22,7 @@ class ImageString {
   static const String homebackgroundScreen = 'Assets/Image/Home/BlueBackground.png';
   static const String avatarIcon = 'Assets/Image/Home/AvatarIcon.png';
   static const String calendarIcon = 'Assets/Image/Home/CalendarIcon.png';
+  // Booking
+  static const String paymentReceivedImage = 'Assets/Image/Booking/PaymentReceived.png';
+  static const String bookingDone = 'Assets/Image/Booking/BookingDone.png';
 }

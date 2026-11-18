@@ -547,7 +547,7 @@ class BookingShowingScreen extends StatelessWidget {
                                 backgroundColor: AppColors.primaryColor,
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                               ),
-                              onPressed: () => controller.markReadyForPayment(),
+                              onPressed: () => controller.markReadyForPayment2(context),
                               child: Text(
                                 TextString.markReadyButton,
                                 style: textTheme.labelLarge?.copyWith(

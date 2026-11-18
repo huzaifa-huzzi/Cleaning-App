@@ -5,12 +5,14 @@ class BookingButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final bool isTablet;
+  final Color? backgroundColor;
 
   const BookingButton({
     super.key,
     required this.text,
     required this.onPressed,
     this.isTablet = false,
+    this.backgroundColor,
   });
 
   @override
@@ -20,7 +22,7 @@ class BookingButton extends StatelessWidget {
       height: 52,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryColor,
+          backgroundColor: backgroundColor ?? AppColors.primaryColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
