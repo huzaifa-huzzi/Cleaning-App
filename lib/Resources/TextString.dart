@@ -329,5 +329,40 @@ class TextString {
   static const String markReadyButton = 'Mark Ready for Payment';
   static const String bookedStatusBadge = 'Booked';
   static const String completedStatusBadge = 'Completed';
+  static const String paymentConfirmationTitle = 'Payment Confirmation';
+  static const String paymentConfirmationSubtitle = "Confirm that you've received payment from your customer.";
+  static const String bookingIdText = 'Booking Id-1048';
+  static const String customerRating = '4.8 ';
+  static const String customerReviewsCount = '(12 reviews)';
+  static const String earningsAfterCommissionLabel = 'Your earnings after commission';
+  static const String earningsAfterCommissionValue = '\$81.00';
+  static const String totalPaymentLabel = 'Total Payment';
+  static const String totalPaymentValue = '\$90.00';
+  static const String cleaningRequirementsHeading = 'Cleaning Requirements';
+  static const String paymentCashTitle = 'Cash';
+  static const String paymentCashSubtitle = 'Customer paid you directly';
+  static const String paymentOnlineTitle = 'Online Payment';
+  static const String paymentOnlineSubtitle = 'Payment handled by the platform';
+  static const String cashReceivedTitle = 'Cash received?';
+  static const String cashReceivedWarning =
+      'Only confirm if the customer has paid the full \$90. Your \$9 platform commission remains a separate obligation.';
+  static const String confirmCashCheckboxText = 'I confirm I received \$90.00 in cash.';
+  static const String paymentReceivedButton = 'Payment recieved';
+  static const String backToBookingButton = 'Back to Booking';
+  static const String infoDateLabel = 'Date';
+  static const String infoDateValue = 'Tomorrow';
+  static const String infoStartTimeLabel = 'Start time';
+  static const String infoStartTimeValue = '10:00 AM';
+  static const String infoPropertyLabel = 'Property';
+  static const String infoPropertyValue = '2-bedroom home';
+  static const String infoDurationLabel = 'Duration';
+  static const String infoDurationValue = 'Approx. 2 hours';
+  static const String showingCustomerRating = '4.8 ';
+  static const String showingCustomerReviewsCount = '(12 reviews)';
+  static const String showingCommissionLabel = 'Platform commission (10%)';
+  static const String showingCommissionValue = '-\$9.00';
+  static const String expectedEarningsLabel = 'Expected Earnings';
+  static const String expectedEarningsSubLabel = 'After 10% commission';
+  static const String tapToRateText = 'Tap to rate';
 
 }

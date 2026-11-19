@@ -3,6 +3,7 @@ import 'package:cleaning_app/Resources/Colors.dart' show AppColors;
 import 'package:cleaning_app/Resources/IconString.dart';
 import 'package:cleaning_app/Resources/ImageString.dart';
 import 'package:cleaning_app/Resources/Routes.dart';
+import 'package:cleaning_app/Resources/TextString.dart' show TextString;
 import 'package:cleaning_app/Sidebar/Sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,7 +12,6 @@ import 'package:go_router/go_router.dart';
 
 class BookingPaymentConfirmation extends StatelessWidget {
   BookingPaymentConfirmation({super.key});
-
 
   final BookingController controller = Get.find<BookingController>();
 
@@ -71,7 +71,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "My Bookings",
+                                    TextString.myBookingsTitle,
                                     style: textTheme.headlineLarge?.copyWith(
                                       color: AppColors.whiteColor,
                                       fontSize: isTablet ? 22 : 18,
@@ -80,7 +80,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 2),
                                   Text(
-                                    "View and manage your cleaning jobs.",
+                                    TextString.myBookingsSubtitle,
                                     style: textTheme.titleSmall?.copyWith(
                                       color: AppColors.whiteColor.withValues(alpha: 0.8),
                                       fontSize: isTablet ? 14 : 12,
@@ -153,7 +153,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Payment Confirmation",
+                        TextString.paymentConfirmationTitle,
                         style: textTheme.headlineLarge?.copyWith(
                           fontSize: isTablet ? 22 : 18,
                           fontWeight: FontWeight.bold,
@@ -161,7 +161,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        "Confirm that you've received payment from your customer.",
+                        TextString.paymentConfirmationSubtitle,
                         style: textTheme.titleSmall?.copyWith(
                           fontSize: isTablet ? 14 : 12,
                           color: AppColors.secondaryColor,
@@ -191,7 +191,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Booking Id-1048",
+                          TextString.bookingIdText,
                           style: textTheme.headlineSmall?.copyWith(
                             fontSize: isTablet ? 14 : 12,
                             color: AppColors.primaryColor,
@@ -210,7 +210,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Awais Ali",
+                                  TextString.customerName,
                                   style: textTheme.bodyMedium?.copyWith(
                                     fontWeight: FontWeight.bold,
                                     fontSize: isTablet ? 16 : 14,
@@ -227,7 +227,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
-                                      '4.8 ',
+                                      TextString.customerRating,
                                       style: textTheme.titleSmall?.copyWith(
                                         fontSize: isTablet ? 14 : 12,
                                         fontWeight: FontWeight.bold,
@@ -235,7 +235,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      '(12 reviews)',
+                                      TextString.customerReviewsCount,
                                       style: textTheme.titleSmall?.copyWith(
                                         fontSize: isTablet ? 13 : 11,
                                         color: AppColors.secondaryColor,
@@ -251,16 +251,42 @@ class BookingPaymentConfirmation extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Your earnings after commission', style: textTheme.titleSmall?.copyWith(color: AppColors.secondaryColor, fontSize: isTablet ? 13 : 11)),
-                            Text('\$81.00', style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600, color: AppColors.blackColor, fontSize: isTablet ? 13 : 11)),
+                            Text(
+                              TextString.earningsAfterCommissionLabel,
+                              style: textTheme.titleSmall?.copyWith(
+                                color: AppColors.secondaryColor,
+                                fontSize: isTablet ? 13 : 11,
+                              ),
+                            ),
+                            Text(
+                              TextString.earningsAfterCommissionValue,
+                              style: textTheme.titleSmall?.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.blackColor,
+                                fontSize: isTablet ? 13 : 11,
+                              ),
+                            ),
                           ],
                         ),
                         const SizedBox(height: 6),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Platform commission (10%)', style: textTheme.titleSmall?.copyWith(color: AppColors.secondaryColor, fontSize: isTablet ? 13 : 11)),
-                            Text('\$9.00', style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600, color: AppColors.blackColor, fontSize: isTablet ? 13 : 11)),
+                            Text(
+                              TextString.platformCommissionLabel,
+                              style: textTheme.titleSmall?.copyWith(
+                                color: AppColors.secondaryColor,
+                                fontSize: isTablet ? 13 : 11,
+                              ),
+                            ),
+                            Text(
+                              TextString.platformCommissionValue,
+                              style: textTheme.titleSmall?.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.blackColor,
+                                fontSize: isTablet ? 13 : 11,
+                              ),
+                            ),
                           ],
                         ),
                         const Divider(height: 24),
@@ -268,11 +294,14 @@ class BookingPaymentConfirmation extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Total Payment',
-                              style: textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold, fontSize: isTablet ? 16 : 14),
+                              TextString.totalPaymentLabel,
+                              style: textTheme.bodyMedium?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                fontSize: isTablet ? 16 : 14,
+                              ),
                             ),
                             Text(
-                              '\$90.00',
+                              TextString.totalPaymentValue,
                               style: textTheme.headlineLarge?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 fontSize: isTablet ? 20 : 16,
@@ -290,7 +319,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: isTablet ? 32 : 20),
                   child: Text(
-                    "Cleaning Requirements",
+                    TextString.cleaningRequirementsHeading,
                     style: textTheme.headlineLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                       fontSize: isTablet ? 18 : 15,
@@ -308,17 +337,18 @@ class BookingPaymentConfirmation extends StatelessWidget {
                         context: context,
                         index: 0,
                         svgPath: IconString.cashIcon,
-                        title: "Cash",
-                        subtitle: "Customer paid you directly",
+                        title: TextString.paymentCashTitle,
+                        subtitle: TextString.paymentCashSubtitle,
                         isTablet: isTablet,
                       ),
                       const SizedBox(height: 10),
                       _buildPaymentOptionCard(
                         context: context,
                         index: 1,
-                        title: "Online Payment",
-                        subtitle: "Payment handled by the platform",
-                        isTablet: isTablet, svgPath: IconString.onlinePayment,
+                        title: TextString.paymentOnlineTitle,
+                        subtitle: TextString.paymentOnlineSubtitle,
+                        isTablet: isTablet,
+                        svgPath: IconString.onlinePayment,
                       ),
                     ],
                   )),
@@ -342,7 +372,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                             const Icon(Icons.info_outline, color: AppColors.whiteColor, size: 20),
                             const SizedBox(width: 8),
                             Text(
-                              "Cash received?",
+                              TextString.cashReceivedTitle,
                               style: textTheme.bodyMedium?.copyWith(
                                 color: AppColors.whiteColor,
                                 fontWeight: FontWeight.bold,
@@ -353,7 +383,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          "Only confirm if the customer has paid the full \$90. Your \$9 platform commission remains a separate obligation.",
+                          TextString.cashReceivedWarning,
                           style: textTheme.titleSmall?.copyWith(
                             color: AppColors.whiteColor.withValues(alpha: 0.85),
                             fontSize: isTablet ? 13 : 11,
@@ -380,7 +410,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                             const SizedBox(width: 8),
                             Expanded(
                               child: Text(
-                                "I confirm I received \$90.00 in cash.",
+                                TextString.confirmCashCheckboxText,
                                 style: textTheme.titleSmall?.copyWith(
                                   color: AppColors.whiteColor,
                                   fontSize: isTablet ? 13 : 11,
@@ -414,7 +444,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                             ),
                             onPressed: () => controller.markReadyForPayment(context),
                             child: Text(
-                              "Payment recieved",
+                              TextString.paymentReceivedButton,
                               style: textTheme.labelLarge?.copyWith(
                                 color: AppColors.whiteColor,
                                 fontWeight: FontWeight.w600,
@@ -440,7 +470,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
                               context.push(Routes.bookingScreen);
                             },
                             child: Text(
-                              "Back to Booking",
+                              TextString.backToBookingButton,
                               style: textTheme.labelLarge?.copyWith(
                                 color: AppColors.primaryColor,
                                 fontWeight: FontWeight.w600,
@@ -465,9 +495,7 @@ class BookingPaymentConfirmation extends StatelessWidget {
 
   /// -------------- Extra Widget --------------------- ///
 
-
-
-   // Payment Option Card
+  // Payment Option Card
   Widget _buildPaymentOptionCard({
     required BuildContext context,
     required int index,
@@ -547,6 +575,4 @@ class BookingPaymentConfirmation extends StatelessWidget {
       ),
     );
   }
-
-
 }

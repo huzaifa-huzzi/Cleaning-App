@@ -195,7 +195,7 @@ class BookingShowingScreen extends StatelessWidget {
                                 style: textTheme.bodyMedium?.copyWith(
                                   fontWeight: FontWeight.w600,
                                   fontSize: isTablet ? 13 : 11,
-                                  color: completedCheck ? AppColors.mainGreenColor :  AppColors.primaryColor,
+                                  color: completedCheck ? AppColors.mainGreenColor : AppColors.primaryColor,
                                 ),
                               ),
                             ),
@@ -227,15 +227,47 @@ class BookingShowingScreen extends StatelessWidget {
                         const Divider(height: 24),
                         Row(
                           children: [
-                            Expanded(child: _buildInfoItem(context, iconPath: IconString.bookingScreenIcon, title: 'Date', value: 'Tomorrow', isTablet: isTablet)),
-                            Expanded(child: _buildInfoItem(context, iconPath: IconString.startTime, title: 'Start time', value: '10:00 AM', isTablet: isTablet)),
+                            Expanded(
+                              child: _buildInfoItem(
+                                context,
+                                iconPath: IconString.bookingScreenIcon,
+                                title: TextString.infoDateLabel,
+                                value: TextString.infoDateValue,
+                                isTablet: isTablet,
+                              ),
+                            ),
+                            Expanded(
+                              child: _buildInfoItem(
+                                context,
+                                iconPath: IconString.startTime,
+                                title: TextString.infoStartTimeLabel,
+                                value: TextString.infoStartTimeValue,
+                                isTablet: isTablet,
+                              ),
+                            ),
                           ],
                         ),
                         const SizedBox(height: 16),
                         Row(
                           children: [
-                            Expanded(child: _buildInfoItem(context, iconPath: IconString.homeScreenIcon, title: 'Property', value: '2-bedroom home', isTablet: isTablet)),
-                            Expanded(child: _buildInfoItem(context, iconPath: IconString.durationIcon, title: 'Duration', value: 'Approx. 2 hours', isTablet: isTablet)),
+                            Expanded(
+                              child: _buildInfoItem(
+                                context,
+                                iconPath: IconString.homeScreenIcon,
+                                title: TextString.infoPropertyLabel,
+                                value: TextString.infoPropertyValue,
+                                isTablet: isTablet,
+                              ),
+                            ),
+                            Expanded(
+                              child: _buildInfoItem(
+                                context,
+                                iconPath: IconString.durationIcon,
+                                title: TextString.infoDurationLabel,
+                                value: TextString.infoDurationValue,
+                                isTablet: isTablet,
+                              ),
+                            ),
                           ],
                         ),
                       ],
@@ -340,7 +372,7 @@ class BookingShowingScreen extends StatelessWidget {
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
-                                      '4.8 ',
+                                      TextString.showingCustomerRating,
                                       style: textTheme.titleSmall?.copyWith(
                                         fontSize: isTablet ? 14 : 12,
                                         fontWeight: FontWeight.bold,
@@ -348,7 +380,7 @@ class BookingShowingScreen extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      '(12 reviews)',
+                                      TextString.showingCustomerReviewsCount,
                                       style: textTheme.titleSmall?.copyWith(
                                         fontSize: isTablet ? 13 : 11,
                                         color: AppColors.secondaryColor,
@@ -431,16 +463,28 @@ class BookingShowingScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Offered job price', style: textTheme.titleSmall?.copyWith(color: AppColors.secondaryColor)),
-                            Text('\$90.00', style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600, color: AppColors.blackColor)),
+                            Text(
+                              TextString.offeredJobPriceLabel,
+                              style: textTheme.titleSmall?.copyWith(color: AppColors.secondaryColor),
+                            ),
+                            Text(
+                              TextString.offeredJobPriceValue,
+                              style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600, color: AppColors.blackColor),
+                            ),
                           ],
                         ),
                         const SizedBox(height: 6),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Platform commission (10%)', style: textTheme.titleSmall?.copyWith(color: AppColors.secondaryColor)),
-                            Text('-\$9.00', style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600, color: AppColors.redColor)),
+                            Text(
+                              TextString.showingCommissionLabel,
+                              style: textTheme.titleSmall?.copyWith(color: AppColors.secondaryColor),
+                            ),
+                            Text(
+                              TextString.showingCommissionValue,
+                              style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600, color: AppColors.redColor),
+                            ),
                           ],
                         ),
                         const Divider(height: 24),
@@ -450,11 +494,24 @@ class BookingShowingScreen extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Expected Earnings', style: textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold, fontSize: isTablet ? 16 : 14)),
-                                Text('After 10% commission', style: textTheme.titleSmall?.copyWith(fontSize: 10, color: AppColors.secondaryColor)),
+                                Text(
+                                  TextString.expectedEarningsLabel,
+                                  style: textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold, fontSize: isTablet ? 16 : 14),
+                                ),
+                                Text(
+                                  TextString.expectedEarningsSubLabel,
+                                  style: textTheme.titleSmall?.copyWith(fontSize: 10, color: AppColors.secondaryColor),
+                                ),
                               ],
                             ),
-                            Text('\$81.00', style: textTheme.headlineLarge?.copyWith(fontWeight: FontWeight.bold, fontSize: isTablet ? 22 : 18, color: AppColors.mainGreenColor)),
+                            Text(
+                              TextString.expectedEarningsValue,
+                              style: textTheme.headlineLarge?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                fontSize: isTablet ? 22 : 18,
+                                color: AppColors.mainGreenColor,
+                              ),
+                            ),
                           ],
                         ),
                       ],
@@ -506,7 +563,7 @@ class BookingShowingScreen extends StatelessWidget {
                           )),
                           const SizedBox(height: 4),
                           Text(
-                            'Tap to rate',
+                            TextString.tapToRateText,
                             style: textTheme.titleSmall?.copyWith(fontSize: 11, color: AppColors.secondaryColor),
                           ),
                           const SizedBox(height: 16),
@@ -597,7 +654,7 @@ class BookingShowingScreen extends StatelessWidget {
     );
   }
 
-   /// ------ Extra Widget -------------------- ///
+  /// ------ Extra Widget -------------------- ///
 
   // Build Info Item
   Widget _buildInfoItem(
@@ -645,14 +702,21 @@ class BookingShowingScreen extends StatelessWidget {
     );
   }
 
-   // Req Row
+  // Req Row
   Widget _buildReqRow(BuildContext context, String text, bool isTablet) {
     final textTheme = Theme.of(context).textTheme;
     return Row(
       children: [
         Icon(Icons.check_circle_outline, size: isTablet ? 20 : 16, color: AppColors.mainGreenColor),
         const SizedBox(width: 8),
-        Text(text, style: textTheme.titleSmall?.copyWith(fontSize: isTablet ? 14 : 12, color: AppColors.blackColor, fontWeight: FontWeight.w500)),
+        Text(
+          text,
+          style: textTheme.titleSmall?.copyWith(
+            fontSize: isTablet ? 14 : 12,
+            color: AppColors.blackColor,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ],
     );
   }
