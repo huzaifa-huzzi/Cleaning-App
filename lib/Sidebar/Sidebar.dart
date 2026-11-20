@@ -189,6 +189,7 @@ class _SidebarState extends State<Sidebar> {
                 iconColor: AppColors.redColor,
                 onTap: () {
                   Navigator.pop(context);
+                  context.push(Routes.login);
 
                 },
               ),
