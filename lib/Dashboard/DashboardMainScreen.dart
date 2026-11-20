@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:go_router/go_router.dart';
 
 class DashboardMainScreen extends StatefulWidget {
@@ -26,9 +25,9 @@ class _DashboardMainScreenState extends State<DashboardMainScreen> {
     final String location = GoRouterState.of(context).uri.path;
     if (location.contains(Routes.homeScreen) || location.contains(Routes.dashboardScreen)) {
       return 0;
-    } else if (location.contains('/booking')) {
+    } else if (location == Routes.bookingScreen) {
       return 1;
-    } else if (location.contains('/earnng')) {
+    } else if (location == Routes.earningScreen) {
       return 2;
     } else if (location.contains('/profile')) {
       return 3;
@@ -87,7 +86,7 @@ class _DashboardMainScreenState extends State<DashboardMainScreen> {
               currentIndex: currentIndex,
               iconPath: IconString.earningScreenIcon,
               title: TextString.navEarnings,
-              route: '/earning'
+              route: Routes.earningScreen,
             ),
             _buildNavItem(
               context,

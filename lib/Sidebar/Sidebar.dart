@@ -123,6 +123,7 @@ class _SidebarState extends State<Sidebar> {
                 title: TextString.menuEarning,
                 onTap: () {
                   Navigator.pop(context);
+                  context.go(Routes.earningScreen);
                 },
               ),
 

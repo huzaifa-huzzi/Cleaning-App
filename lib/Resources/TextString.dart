@@ -365,4 +365,26 @@ class TextString {
   static const String expectedEarningsSubLabel = 'After 10% commission';
   static const String tapToRateText = 'Tap to rate';
 
+  /// Earning
+  static const String yourEarningsTitle = 'Your Earnings';
+  static const String yourEarningsSubtitle = 'Track earnings, jobs, and commission dues';
+  static const String earningSectionTitle = 'Earning';
+  static const String totalNetEarningsLabel = 'Total Net Earnings';
+  static const String totalNetEarningsValue = '\$1,240.00';
+  static const String afterPlatformCommissionAud = 'After platform commission · AUD';
+  static const String thisMonthLabel = 'This month';
+  static const String thisMonthValue = '\$420.00';
+  static const String completedJobsLabel = 'Completed jobs';
+  static const String completedJobsValue = '18';
+  static const String outstandingCommissionLabel = 'Outstanding Commission';
+  static const String unpaidBadgeText = 'Unpaid';
+  static const String paidBadgeText = 'Paid';
+  static const String outstandingCommissionValue = '\$18.00 AUD';
+  static const String commissionFromCashBookings = 'Commission from 2 cash bookings';
+  static const String payOutstandingDuesButton = 'Pay Outstanding Dues';
+  static const String viewAllButton = 'View All';
+  static const String showLessButton = 'Show Less';
+  static const String cashJobEarningsTitle = 'Cash Job Earnings';
+  static const String commissionPaymentTitle = 'Commission Payment';
+
 }

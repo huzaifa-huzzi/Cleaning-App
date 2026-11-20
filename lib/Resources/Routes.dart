@@ -17,6 +17,7 @@ import 'package:cleaning_app/Booking/BookingPaymentConfirmation.dart';
 import 'package:cleaning_app/Booking/BookingScreen.dart';
 import 'package:cleaning_app/Booking/BookingShowingScreen.dart' show BookingShowingScreen;
 import 'package:cleaning_app/Dashboard/DashboardMainScreen.dart';
+import 'package:cleaning_app/Earning/EarningScreen.dart';
 import 'package:cleaning_app/HomeScreen/BrowseJobScreen.dart';
 import 'package:cleaning_app/HomeScreen/HomeChatScreen.dart';
 import 'package:cleaning_app/HomeScreen/HomeJobDetailScreen.dart';
@@ -50,6 +51,7 @@ class Routes {
   static const String bookingScreen = '/bookingScreen';
   static const String bookingShowingScreen = '/bookingShowingScreen';
   static const String bookingPaymentConfirmation = '/bookingPaymentConfirmation';
+  static const String earningScreen = '/EarningScreen';
 
 
   static final GoRouter router = GoRouter(
@@ -158,6 +160,10 @@ class Routes {
           GoRoute(
             path: bookingPaymentConfirmation,
             builder: (context, state) =>  BookingPaymentConfirmation(),
+          ),
+          GoRoute(
+            path: earningScreen,
+            builder: (context, state) =>  EarningScreen(),
           ),
         ],
       ),

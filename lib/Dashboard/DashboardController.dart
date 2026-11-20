@@ -16,10 +16,10 @@ class DashboardController extends GetxController {
         context.go(Routes.homeScreen);
         break;
       case 1:
-        context.go('/bookings');
+        context.go(Routes.bookingScreen);
         break;
       case 2:
-        context.go('/earnings');
+        context.go(Routes.earningScreen);
         break;
       case 3:
         context.go('/profile');
