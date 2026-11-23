@@ -18,6 +18,8 @@ import 'package:cleaning_app/Booking/BookingScreen.dart';
 import 'package:cleaning_app/Booking/BookingShowingScreen.dart' show BookingShowingScreen;
 import 'package:cleaning_app/Dashboard/DashboardMainScreen.dart';
 import 'package:cleaning_app/Earning/EarningScreen.dart';
+import 'package:cleaning_app/Earning/EarningSelectPayment.dart';
+import 'package:cleaning_app/Earning/EarningUnpaidScreen.dart';
 import 'package:cleaning_app/HomeScreen/BrowseJobScreen.dart';
 import 'package:cleaning_app/HomeScreen/HomeChatScreen.dart';
 import 'package:cleaning_app/HomeScreen/HomeJobDetailScreen.dart';
@@ -52,6 +54,8 @@ class Routes {
   static const String bookingShowingScreen = '/bookingShowingScreen';
   static const String bookingPaymentConfirmation = '/bookingPaymentConfirmation';
   static const String earningScreen = '/EarningScreen';
+  static const String earningUnpaidCommission = '/earningUnpaidCommission';
+  static const String earningSelectPayment = '/earningSelectPayment';
 
 
   static final GoRouter router = GoRouter(
@@ -164,6 +168,14 @@ class Routes {
           GoRoute(
             path: earningScreen,
             builder: (context, state) =>  EarningScreen(),
+          ),
+          GoRoute(
+            path: earningUnpaidCommission,
+            builder: (context, state) =>  EarningUnpaidScreen(),
+          ),
+          GoRoute(
+            path: earningSelectPayment,
+            builder: (context, state) =>  EarningSelectPayment(),
           ),
         ],
       ),

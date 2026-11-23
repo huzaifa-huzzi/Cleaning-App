@@ -453,15 +453,15 @@ class _EarningScreenState extends State<EarningScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                   decoration: BoxDecoration(
-                    color: isPaid ? AppColors.completeBAckground : AppColors.redColor,
+                    color: AppColors.redColor,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
-                    isPaid ? TextString.paidBadgeText : TextString.unpaidBadgeText,
+                    TextString.unpaidBadgeText,
                     style: textTheme.bodySmall?.copyWith(
                       fontSize: isTablet ? 12 : 10,
                       fontWeight: FontWeight.w600,
-                      color: isPaid ? AppColors.mainGreenColor : AppColors.whiteColor,
+                      color: AppColors.whiteColor,
                     ),
                   ),
                 ),
@@ -469,7 +469,7 @@ class _EarningScreenState extends State<EarningScreen> {
             ),
             const SizedBox(height: 4),
             Text(
-              isPaid ? '\$0.00 AUD' : TextString.outstandingCommissionValue,
+              TextString.outstandingCommissionValue,
               style: textTheme.headlineLarge?.copyWith(
                 fontWeight: FontWeight.bold,
                 fontSize: isTablet ? 24 : 20,
@@ -486,10 +486,10 @@ class _EarningScreenState extends State<EarningScreen> {
             ),
             const SizedBox(height: 16),
             EarningButton(
-              text: isPaid ? TextString.paidBadgeText : TextString.payOutstandingDuesButton,
+              text: TextString.payOutstandingDuesButton,
               isTablet: isTablet,
-              backgroundColor: isPaid ? AppColors.mainGreenColor : AppColors.primaryColor,
-              onPressed: isPaid ? () {} : () => controller.payOutstandingDues(),
+              backgroundColor: AppColors.primaryColor,
+              onPressed: () => controller.payOutstandingDues(context),
             ),
           ],
         ),

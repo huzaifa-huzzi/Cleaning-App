@@ -386,5 +386,25 @@ class TextString {
   static const String showLessButton = 'Show Less';
   static const String cashJobEarningsTitle = 'Cash Job Earnings';
   static const String commissionPaymentTitle = 'Commission Payment';
+  static const String unpaidCommissionTitle = 'Unpaid Commission';
+  static const String unpaidCommissionSubtitle = 'Check unpaid commission by booking.';
+  static const String totalAmountToPayLabel = 'Total amount to pay';
+  static const String pendingBadgeText = 'Pending';
+  static const String unpaidAmountAudValue = '\$18.00 AUD';
+  static const String unpaidCashJobsHeading = 'Unpaid Cash Jobs';
+  static const String totalUnpaidCommissionLabel = 'Total unpaid commission';
+  static const String totalUnpaidCommissionValue = '\$18.00';
+  static const String unpaidJobKitchenTitle = 'Kitchen Cleaning';
+  static const String unpaidJobHomeTitle = 'Home Cleaning';
+  static const String unpaidJobBookingSubtitle = 'Booking #BK1024';
+  static const String unpaidJobCommissionNine = '\$9.00';
+  static const String selectPaymentMethodTitle = 'Select Payment Method';
+  static const String selectPaymentMethodSubtitle = 'Check unpaid commission by booking.';
+  static const String availableMethodsHeading = 'Available Methods';
+  static const String debitCreditCardTitle = 'Debit / Credit Card';
+  static const String debitCreditCardSubtitle = 'Pay securely by card';
+  static const String bankTransferTitle = 'Bank Transfer';
+  static const String bankTransferSubtitle = 'Transfer to platform bank account';
+  static const String continuePaymentButton = 'Continue';
 
 }

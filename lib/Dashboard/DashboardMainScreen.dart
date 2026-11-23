@@ -27,7 +27,10 @@ class _DashboardMainScreenState extends State<DashboardMainScreen> {
       return 0;
     } else if (location == Routes.bookingScreen) {
       return 1;
-    } else if (location == Routes.earningScreen) {
+    } else if (location == Routes.earningScreen ||
+        location == Routes.earningUnpaidCommission ||
+        location == Routes.earningSelectPayment ||
+        location.toLowerCase().contains('/earning')) {
       return 2;
     } else if (location.contains('/profile')) {
       return 3;

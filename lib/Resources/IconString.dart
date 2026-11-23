@@ -38,6 +38,7 @@ class IconString {
   static const String  customerNotes = 'Assets/icons/CustomerNotes.svg';
   static const String  cashIcon = 'Assets/icons/CashIcon.svg';
   static const String  onlinePayment = 'Assets/icons/OnlinePaymentIcon.svg';
+  static const String  debitCardIcon = 'Assets/icons/debitCardIcon.svg';
 
 
 
