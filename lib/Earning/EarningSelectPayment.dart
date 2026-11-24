@@ -40,7 +40,6 @@ class _EarningSelectPaymentState extends State<EarningSelectPayment> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // 1. Top Header Banner
                 Container(
                   width: double.infinity,
                   height: isTablet ? 220 : 160,
@@ -155,8 +154,6 @@ class _EarningSelectPaymentState extends State<EarningSelectPayment> {
                 ),
 
                 const SizedBox(height: 16),
-
-                // 2. Outstanding Commission Summary Card with Wallet Icon
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: isTablet ? 32 : 20),
                   child: Container(
@@ -210,8 +207,6 @@ class _EarningSelectPaymentState extends State<EarningSelectPayment> {
                 ),
 
                 const SizedBox(height: 20),
-
-                // 3. Available Methods Heading
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: isTablet ? 32 : 20),
                   child: Text(
@@ -253,8 +248,6 @@ class _EarningSelectPaymentState extends State<EarningSelectPayment> {
                 ),
 
                 const SizedBox(height: 24),
-
-                // 5. Continue Action Button
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: isTablet ? 32 : 20),
                   child: Center(
@@ -262,7 +255,7 @@ class _EarningSelectPaymentState extends State<EarningSelectPayment> {
                       text: TextString.continuePaymentButton,
                       isTablet: isTablet,
                       backgroundColor: AppColors.primaryColor,
-                      onPressed: () => controller.continueWithPaymentMethod(),
+                      onPressed: () => controller.continueWithPaymentMethod(context),
                     ),
                   ),
                 ),

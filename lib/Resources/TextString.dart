@@ -406,5 +406,29 @@ class TextString {
   static const String bankTransferTitle = 'Bank Transfer';
   static const String bankTransferSubtitle = 'Transfer to platform bank account';
   static const String continuePaymentButton = 'Continue';
+  static const String enterCardDetailsSubtitle = 'Enter your card details to pay your commission.';
+  static const String cardholderNameLabel = 'Cardholder Name';
+  static const String cardholderNameHint = 'Enter Your Full Name';
+  static const String cardNumberLabel = 'Card Number';
+  static const String cardNumberHint = '1234 5678 9012 3456';
+  static const String expiryDateLabel = 'Expiry Date';
+  static const String expiryDateHint = 'MM/YY';
+  static const String cvvLabel = 'CVV';
+  static const String cvvHint = '123';
+  static const String payAmountButtonPrefix = 'Pay \$18.00';
+  static const String paymentSuccessfulTitle = 'Payment Successful!';
+  static const String paymentSuccessfulSubtitle =
+      'Your outstanding commission has been paid successfully.';
+  static const String paymentMethodSummaryLabel = 'Payment method';
+  static const String paymentMethodCardValue = 'Card';
+  static const String paymentMethodBankValue = 'Bank Transfer';
+  static const String outstandingBalanceSummaryLabel = 'Outstanding balance';
+  static const String zeroBalanceValue = '\$0.00';
+  static const String paymentStatusSummaryLabel = 'Payment status';
+  static const String paymentStatusVerifiedValue = 'Verified';
+  static const String backToEarningButton = 'Back to Earning';
+  static const String earningSectionHeading = 'Earning';
+  static const String receivedStatusText = 'Received';
+  static const String paidStatusText = 'Paid';
 
 }

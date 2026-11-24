@@ -233,7 +233,7 @@ class _EarningScreenState extends State<EarningScreen> {
                             ),
                             elevation: 0,
                           ),
-                          onPressed: () => controller.toggleViewAll(),
+                          onPressed: () => controller.toggleViewAll(context),
                           child: Text(
                             controller.isShowAll.value
                                 ? TextString.showLessButton
