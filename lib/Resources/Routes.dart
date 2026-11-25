@@ -27,6 +27,7 @@ import 'package:cleaning_app/HomeScreen/HomeChatScreen.dart';
 import 'package:cleaning_app/HomeScreen/HomeJobDetailScreen.dart';
 import 'package:cleaning_app/HomeScreen/HomeScreen.dart';
 import 'package:cleaning_app/Onboarding/OnboardingScreen.dart';
+import 'package:cleaning_app/Profile/ProfileMainScreen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 
@@ -60,6 +61,7 @@ class Routes {
   static const String earningSelectPayment = '/earningSelectPayment';
   static const String earningEnterPayment = '/earningEnterPayment';
   static const String earningViewAll = '/earningViewAll';
+  static const String profileScreen = '/profileScreen';
 
 
   static final GoRouter router = GoRouter(
@@ -188,6 +190,10 @@ class Routes {
           GoRoute(
             path: earningViewAll,
             builder: (context, state) =>  EarningViewAll(),
+          ),
+          GoRoute(
+            path: profileScreen,
+            builder: (context, state) =>  ProfileMainScreen(),
           ),
         ],
       ),

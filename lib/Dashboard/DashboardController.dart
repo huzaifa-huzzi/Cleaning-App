@@ -22,7 +22,7 @@ class DashboardController extends GetxController {
         context.go(Routes.earningScreen);
         break;
       case 3:
-        context.go('/profile');
+        context.go(Routes.profileScreen);
         break;
     }
   }

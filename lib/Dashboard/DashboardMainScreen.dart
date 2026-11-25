@@ -32,7 +32,7 @@ class _DashboardMainScreenState extends State<DashboardMainScreen> {
         location == Routes.earningSelectPayment ||
         location.toLowerCase().contains('/earning')) {
       return 2;
-    } else if (location.contains('/profile')) {
+    } else if (location == Routes.profileScreen || location.toLowerCase().contains('/profile')) {
       return 3;
     }
     return 0;
@@ -97,7 +97,7 @@ class _DashboardMainScreenState extends State<DashboardMainScreen> {
               currentIndex: currentIndex,
               iconPath: IconString.profileIcon,
               title: TextString.navProfile,
-              route: '/profile'
+              route: Routes.profileScreen
             ),
           ],
         ),

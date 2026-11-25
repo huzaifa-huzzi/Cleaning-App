@@ -143,6 +143,7 @@ class _SidebarState extends State<Sidebar> {
                 title: TextString.menuMyProfile,
                 onTap: () {
                   Navigator.pop(context);
+                  context.go(Routes.profileScreen);
                 },
               ),
               _buildSidebarItem(

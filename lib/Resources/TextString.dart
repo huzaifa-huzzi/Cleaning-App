@@ -431,4 +431,15 @@ class TextString {
   static const String receivedStatusText = 'Received';
   static const String paidStatusText = 'Paid';
 
+  /// Profile
+  static const String profileTitle = 'Profile';
+  static const String profileSubtitle = 'Manage your details and verification.';
+  static const String verifiedCleanerText = 'Verified Cleaner';
+  static const String personalInfoHeading = 'Personal Information';
+  static const String addressLabel = 'Address';
+  static const String serviceInfoHeading = 'Service Information';
+  static const String cleaningServicesLabel = 'Cleaning Services';
+  static const String experienceLabel = 'Experience';
+  static const String editProfileButton = 'Edit Profile';
+
 }
