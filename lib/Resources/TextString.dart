@@ -441,5 +441,24 @@ class TextString {
   static const String cleaningServicesLabel = 'Cleaning Services';
   static const String experienceLabel = 'Experience';
   static const String editProfileButton = 'Edit Profile';
+  static const String updateProfileTitle = 'Update Profile';
+  static const String updateProfileSubtitle = 'Manage your details and verification.';
+  static const String updateProfileCardSubtitle = 'Are you sure you want to update your profile?';
+  static const String enterFullNameHint = 'Enter Your Full Name';
+  static const String emailAddressLabel = 'Email Address';
+  static const String enterEmailAddressHint = 'Enter Your Email Address';
+  static const String updateProfileButton = 'Update Profile';
+  static const String verifyYourNumberTitle = 'Verify Your Number';
+  static const String verificationCodeSentPrefix = "We've sent a verification code to";
+  static const String enterSixDigitCodeLabel = 'Enter 6–digit code';
+  static const String didntReceiveCodeText = "Didn't receive the code? ";
+  static const String resendInPrefix = 'Resend in ';
+  static const String resendCodeText = 'Resend Code';
+  static const String wrongNumberText = 'Wrong number? ';
+  static const String goBackAndEditText = 'Go back and edit it.';
+  static const String profileEditedTitle = 'Profile edited\nsuccessfully';
+  static const String profileEditedSubtitle =
+      'Congratulation! your profile has successfully updated in the system.';
+  static const String backToProfileButton = 'Back to Profile';
 
 }

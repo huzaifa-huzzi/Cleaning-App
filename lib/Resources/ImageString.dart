@@ -25,4 +25,8 @@ class ImageString {
   // Booking
   static const String paymentReceivedImage = 'Assets/Image/Booking/PaymentReceived.png';
   static const String bookingDone = 'Assets/Image/Booking/BookingDone.png';
+
+  // Update Profile
+  static const String updateProfile = 'Assets/Image/Profile/UpdateProfilePic.png';
+  static const String profilePhone = 'Assets/Image/Profile/ProfilePhone.png';
 }

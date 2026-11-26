@@ -40,7 +40,6 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // 1. Top Header Banner
                 Container(
                   width: double.infinity,
                   height: isTablet ? 220 : 160,
@@ -140,8 +139,6 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
                 ),
 
                 const SizedBox(height: 20),
-
-                // 2. User Avatar, Name, Email & Verified Badge
                 Obx(() {
                   final double avatarSize = isTablet ? 96 : 76;
                   return Column(
@@ -222,8 +219,6 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
                 }),
 
                 const SizedBox(height: 20),
-
-                // 3. Personal Information Card
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: isTablet ? 32 : 20),
                   child: Obx(() {
@@ -254,8 +249,6 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
                 ),
 
                 const SizedBox(height: 16),
-
-                // 4. Service Information Card
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: isTablet ? 32 : 20),
                   child: Obx(() {
@@ -282,8 +275,6 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
                 ),
 
                 const SizedBox(height: 22),
-
-                // 5. Edit Profile Button
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: isTablet ? 32 : 20),
                   child: Center(
@@ -307,6 +298,7 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
 
   /// ----------------- Extra Widget ------------------ ///
 
+  // Info Section Card
   Widget _buildInfoSectionCard({
     required TextTheme textTheme,
     required String heading,
@@ -381,6 +373,7 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
   }
 }
 
+ // Info Row Data
 class _InfoRowData {
   final String label;
   final String value;
